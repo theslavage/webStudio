@@ -1,0 +1,67 @@
+@import "../../../../assets/styles/variables";
+
+.header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .container {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header-menu  {
+
+      nav ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 30px;
+
+        li {
+          list-style: none;
+          cursor: pointer;
+
+          a {
+            color: $text-color-dark-blue;
+            font-family: "Montserrat", sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .header-phone {
+      text-decoration: none;
+      color: $text-color-blue;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      cursor: pointer;
+
+
+      .header-actions-icon {
+        display: contents;
+      }
+
+      .header-actions-title {
+        color: $text-color-dark-blue;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+      }
+    }
+  }
+}
