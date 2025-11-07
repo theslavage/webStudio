@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from "@angular/material/snack-bar";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthService} from "./core/auth/auth.service";
+import { SliderComponent } from './views/main/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {AuthService} from "./core/auth/auth.service";
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,

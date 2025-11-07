@@ -1,0 +1,150 @@
+@import "../../../../assets/styles/variables";
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1240px;
+  height: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.6s ease;
+  height: 100%;
+}
+
+.slide {
+  position: relative;
+  min-width: 100%;
+  height: 100%;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Текст поверх изображения */
+.slide-overlay {
+  position: absolute;
+  top: 100px;
+  left: 75px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+}
+
+.slide-text {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  border-radius: 8px;
+  max-width: 600px;
+}
+
+.slide-text h2 {
+  color: #FFF;
+  font-family: 'Lora',sans-serif;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  margin: 0;
+  padding-bottom: 20px;
+  padding-top: 5px;
+}
+
+.slide-text-description {
+  color: $text-color-blue;
+  font-family: 'Montserrat',sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 4.8px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.slide-text .extra-text {
+  color: #FFF;
+  font-family: 'Montserrat',sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%; /* 31.2px */
+  max-width: 455px;
+  margin: 0;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+
+.nav-btn:hover {
+  opacity: 1;
+}
+
+.nav-btn img {
+  width: 30px;
+  height: auto;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6)); /* делает видимыми на светлом фоне */
+}
+
+.prev {
+  left: 25px;
+}
+
+.next {
+  right: 25px;
+}
+
+/* Точки-индикаторы */
+.dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #fff;      /* белый бордер */
+  background: transparent;     /* пустая середина */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dots span.active {
+  background: #fff;            /* белый кружок */
+  transform: scale(1.0);
+}
+
+
+.slide-text h2 .highlight {
+  color: $text-color-blue;
+}
+
+.button {
+  max-width: 163px;
+  margin-top: 20px;
+}
