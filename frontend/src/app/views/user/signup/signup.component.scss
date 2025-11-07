@@ -5,9 +5,11 @@
 
   .container {
     display: flex;
+    align-items: center;
 
     .page-image {
       margin-left: 185px;
+      max-height: 390px !important;
 
       img {
         vertical-align: center;

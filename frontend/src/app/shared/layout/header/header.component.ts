@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from "../../../core/auth/auth.service";
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  isLogged = false;
+  userName: string | null = null;
+  showMenu = false; // флаг для выпадающего меню
+
+  constructor(private auth: AuthService) {}
 
   ngOnInit(): void {
+    this.isLogged = this.auth.getIsLoggedIn();
+
+    this.auth.isLogged$.subscribe(isLoggedIn => {
+      this.isLogged = isLoggedIn;
+      if (!isLoggedIn) this.showMenu = false;
+    });
+
+    this.auth.userName$.subscribe(name => {
+      this.userName = name;
+    });
+  }
+
+  toggleMenu() {
+    if (this.isLogged) {
+      this.showMenu = !this.showMenu;
+    }
+  }
+
+
+  logout() {
+    this.auth.logout();
+    this.showMenu = false;
   }
 
 }
