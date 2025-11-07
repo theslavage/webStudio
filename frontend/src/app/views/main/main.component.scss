@@ -24,9 +24,12 @@
       .products-block {
         width: 290px;
         height: 498px;
-        box-sizing: border-box;
-        display: block;
+        display: flex;
+        flex-direction: column;
         justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0;
+
 
         .product-block-image {
 
@@ -54,22 +57,13 @@
           color: $text-color-dark-blue;
           font-family: 'Montserrat', sans-serif;
           font-size: 14px;
-          font-style: normal;
           font-weight: 400;
-          line-height: 130%; /* 18.2px */
+          line-height: 130%;
           padding-bottom: 15px;
-
-        }
-
-        .product-block-description-size {
-          color: $text-color-dark-blue;
-          font-family: 'Montserrat', sans-serif;
-          font-size: 14px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 130%; /* 18.2px */
-          padding-bottom: 33px;
-
+          width: 100%;
+          max-width: 571px; /* твоя нужная ширина */
+          height: 80px; /* фиксируем высоту */
+          text-overflow: ellipsis;
         }
 
         .product-block-price-btn {
@@ -198,6 +192,49 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+
+.popular-article {
+
+  .container {
+
+    .popular-article-title {
+      color: $text-color-blue;
+      font-family: 'Lora', sans-serif;
+      font-size: 38px;
+      font-style: normal;
+      font-weight: 400;
+      padding-bottom: 40px;
+    }
+
+    .article-cart-items {
+      display: flex;
+      gap: 25px;
+    }
+
+    .popular-article-link {
+      display: flex;
+      justify-content: end;
+      padding-top: 40px;
+
+      .popular-article-link-content {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        cursor: pointer;
+
+        p {
+          color: $text-color-blue;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          margin: 0;
         }
       }
     }

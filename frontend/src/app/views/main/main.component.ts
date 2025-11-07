@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ArticleTopService} from "../../shared/services/article-top.service";
+import {ArticleType} from "../../../types/article.type";
 
 @Component({
   selector: 'app-main',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  articleTop: ArticleType[] = [];
+
+  constructor(private articleTopService: ArticleTopService) { }
 
   ngOnInit(): void {
+    this.articleTopService.getTopCategories()
+      .subscribe((data: ArticleType[]) => {
+        this.articleTop = data;
+      })
   }
 
 }
