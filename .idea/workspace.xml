@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1e55dab-cb92-4260-9767-876cb6ce3471" name="Changes" comment="addedRegistrationAndAuthentication">
+    <list default="true" id="a1e55dab-cb92-4260-9767-876cb6ce3471" name="Changes" comment="addedSlider">
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/fonts/lora-medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/page/advantages.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/products/product1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/products/product2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/products/product3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/products/product4.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/slider/slider.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/slider/slider.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/styles/_fonts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,34 +55,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/twin9/Documents/Frontend/webStudio/frontend/src/types&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\twin9\\Documents\\Frontend\\webStudio\\frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/twin9/Documents/Frontend/webStudio/frontend/src/assets/fonts",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\twin9\\Documents\\Frontend\\webStudio\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\types" />
+      <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\fonts" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\images\page" />
+      <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\types" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\images\products" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\images\slider" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\images\page" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\fonts" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\styles" />
-      <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -124,7 +130,7 @@
       <workItem from="1762420060874" duration="16693000" />
       <workItem from="1762437485511" duration="4009000" />
       <workItem from="1762441834211" duration="17759000" />
-      <workItem from="1762514447320" duration="1243000" />
+      <workItem from="1762514447320" duration="6942000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -142,7 +148,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762504688734</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="addedSlider">
+      <option name="closed" value="true" />
+      <created>1762515848151</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762515848151</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +165,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="addedRegistrationAndAuthentication" />
-    <option name="LAST_COMMIT_MESSAGE" value="addedRegistrationAndAuthentication" />
+    <MESSAGE value="addedSlider" />
+    <option name="LAST_COMMIT_MESSAGE" value="addedSlider" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,0 +1,205 @@
+@import "../../../assets/styles/variables";
+
+.products {
+
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  .container {
+
+    .products-title {
+      color: $text-color-blue;
+      font-family: 'Lora', sans-serif;
+      font-size: 38px;
+      font-style: normal;
+      font-weight: 400;
+      padding-bottom: 40px;
+    }
+
+    .products-blocks {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 25px;
+
+      .products-block {
+        width: 290px;
+        height: 498px;
+        box-sizing: border-box;
+        display: block;
+        justify-content: space-between;
+
+        .product-block-image {
+
+          width: 291px;
+          height: 291px;
+          border-radius: 5px;
+          padding-bottom: 15px;
+
+          img {
+            background-size: cover;
+            background-position: center;
+          }
+        }
+
+        .product-block-title {
+          color: $text-color-blue;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          padding-bottom: 10px;
+        }
+
+        .product-block-description {
+          color: $text-color-dark-blue;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 130%; /* 18.2px */
+          padding-bottom: 15px;
+
+        }
+
+        .product-block-description-size {
+          color: $text-color-dark-blue;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 130%; /* 18.2px */
+          padding-bottom: 33px;
+
+        }
+
+        .product-block-price-btn {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          p {
+            color: #709FDC;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 130%; /* 26px */
+          }
+
+          button {
+
+            width: 163px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.about {
+  padding-bottom: 120px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .about-image {
+      width: 453px;
+      height: 460px;
+      margin-right: 68px;
+
+      img {
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    .about-content {
+
+      .about-title {
+        color: #709FDC;
+        font-family: 'Lora', sans-serif;
+        font-size: 38px;
+        font-style: normal;
+        font-weight: 400;
+        padding-bottom: 20px;
+      }
+
+      .about-description {
+        color: #1E1A2B;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+
+        span {
+          font-weight: 600;
+        }
+      }
+
+      .about-advantages {
+        padding-top: 40px;
+
+        .about-advantages-title {
+          color: $text-color-blue;
+          font-family: 'Lora', sans-serif;
+          font-size: 26px;
+          font-style: normal;
+          font-weight: 400;
+          padding-bottom: 20px;
+        }
+
+        .about-advantages-blocks {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, auto);
+          column-gap: 72px;
+          row-gap: 20px;
+
+          .about-advantages-block {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .about-advantages-block-number {
+              position: relative;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background: #B9D5FD; // синий кружок
+              flex-shrink: 0;
+
+              span {
+                position: absolute;
+                top: -20px; /* немного выходит сверху */
+                left: 50%;
+                transform: translateX(-50%);
+                color: $text-color-blue;
+                font-family: 'Lora', sans-serif;
+                font-size: 50px;
+                font-style: normal;
+                font-weight: 500;
+              }
+            }
+
+            .about-advantages-block-description {
+              color: #1E1A2B;
+              font-family: 'Montserrat', sans-serif;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 130%;
+              max-width: 256px;
+
+              span {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
