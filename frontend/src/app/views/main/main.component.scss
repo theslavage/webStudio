@@ -1,4 +1,5 @@
 @import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
 
 .products {
 
@@ -8,11 +9,7 @@
   .container {
 
     .products-title {
-      color: $text-color-blue;
-      font-family: 'Lora', sans-serif;
-      font-size: 38px;
-      font-style: normal;
-      font-weight: 400;
+      @include head-lora-38;
       padding-bottom: 40px;
     }
 
@@ -112,11 +109,7 @@
     .about-content {
 
       .about-title {
-        color: #709FDC;
-        font-family: 'Lora', sans-serif;
-        font-size: 38px;
-        font-style: normal;
-        font-weight: 400;
+        @include head-lora-38;
         padding-bottom: 20px;
       }
 
@@ -204,11 +197,7 @@
   .container {
 
     .popular-article-title {
-      color: $text-color-blue;
-      font-family: 'Lora', sans-serif;
-      font-size: 38px;
-      font-style: normal;
-      font-weight: 400;
+      @include head-lora-38;
       padding-bottom: 40px;
     }
 
@@ -235,6 +224,139 @@
           font-style: normal;
           font-weight: 500;
           margin: 0;
+        }
+      }
+    }
+  }
+}
+
+
+.review {
+  margin-top: 130px;
+  margin-bottom: 130px;
+
+  .container {
+
+    .review-title {
+      @include head-lora-38;
+      margin-bottom: 50px;
+    }
+
+    .review-carousel {
+      position: relative;
+
+      .review-item {
+        width: 396px;
+        height: 267px;
+        padding: 30px;
+        border: 1px solid $text-color-blue;
+        border-radius: 10px;
+        box-sizing: border-box;
+
+        .review-item-head {
+          display: flex;
+          align-items: center;
+
+          .review-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+            margin-right: 26px;
+          }
+
+          .review-item-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            color: $text-color-blue;
+          }
+        }
+
+        .review-item-text {
+          margin-top: 15px;
+          font-size: 16px;
+          line-height: 140%;
+          color: $text-color-dark-blue;
+        }
+      }
+
+      .review-arrows {
+        display: flex;
+
+        a {
+          top: calc(50% - 5px);
+          display: flex;
+          position: absolute;
+          cursor: pointer;
+
+          &.move-backward {
+            left: -41px;
+          }
+
+          &.move-forward {
+            right: -41px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.map {
+
+  padding-bottom: 120px;
+  .container {
+
+    display: flex;
+
+
+    .map-action iframe {
+      vertical-align: bottom;
+      padding-right: 26px;
+    }
+
+    .map-content {
+
+      .map-content-title {
+        @include head-lora-38;
+        padding-bottom: 20px;
+      }
+
+      .map-content-blocks {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .map-content-block {
+
+          h2 {
+            color: $text-color-blue;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            margin: 0;
+            padding-bottom: 10px;
+          }
+
+          p {
+            margin: 0;
+            color: $text-color-dark-blue;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            max-width: 500px;
+          }
+
+          .map-content-icons {
+            display: flex;
+            gap: 20px;
+          }
+
         }
       }
     }

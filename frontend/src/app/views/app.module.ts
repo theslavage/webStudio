@@ -17,6 +17,8 @@ import { ArticleCartComponent } from '../shared/components/article-cart/article-
 import {MainComponent} from "./main/main.component";
 import {SliderComponent} from "./main/slider/slider.component";
 import {SharedModule} from "../shared/shared.module";
+import {CarouselModule} from "ngx-owl-carousel-o";
+import {ModalComponent} from "../shared/components/modal/modal.component";
 
 @NgModule({
   declarations: [
@@ -26,13 +28,13 @@ import {SharedModule} from "../shared/shared.module";
     FooterComponent,
     MainComponent,
     SliderComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatSnackBarModule,
     HttpClientModule,
+    CarouselModule,
     FormsModule,
     BrowserAnimationsModule,
     SharedModule

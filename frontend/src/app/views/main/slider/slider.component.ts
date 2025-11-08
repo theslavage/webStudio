@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalService } from '../../../shared/services/modal.service';
 
 @Component({
   selector: 'app-slider',
@@ -6,6 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent {
+
+  constructor(private modal: ModalService) {}
+
+  openSliderModal(card: any) {
+    this.modal.open({ source: 'slider', payload: { cardId: card?.id } });
+  }
+
   currentIndex = 0;
 
   cards = [

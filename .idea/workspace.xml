@@ -4,35 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1e55dab-cb92-4260-9767-876cb6ce3471" name="Changes" comment="addedAbout">
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image10.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image11.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image12.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image13.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image15.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image8.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/public/images/image9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/types/article.type.ts" afterDir="false" />
+    <list default="true" id="a1e55dab-cb92-4260-9767-876cb6ce3471" name="Changes" comment="addedArticleBlock">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,6 +126,8 @@
       <workItem from="1762441834211" duration="17759000" />
       <workItem from="1762514447320" duration="17148000" />
       <workItem from="1762533180286" duration="3241000" />
+      <workItem from="1762536599142" duration="107000" />
+      <workItem from="1762590106121" duration="990000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -185,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762521828395</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="addedArticleBlock">
+      <option name="closed" value="true" />
+      <created>1762536625974</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762536625974</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,7 +180,8 @@
     <MESSAGE value="addedRegistrationAndAuthentication" />
     <MESSAGE value="addedSlider" />
     <MESSAGE value="addedAbout" />
-    <option name="LAST_COMMIT_MESSAGE" value="addedAbout" />
+    <MESSAGE value="addedArticleBlock" />
+    <option name="LAST_COMMIT_MESSAGE" value="addedArticleBlock" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
