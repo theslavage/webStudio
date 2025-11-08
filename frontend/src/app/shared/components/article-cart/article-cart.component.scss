@@ -1,0 +1,75 @@
+@import "../../../../assets/styles/variables";
+
+.article-cart {
+  width: 292px;
+  height: 571px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0;
+  position: relative;
+
+
+  .article-cart-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border-radius: 5px;
+    background: #FFF;
+    color: $text-color-blue;
+    text-align: center;
+    z-index: 3;
+    padding: 10px 18px;
+  }
+
+  .article-cart-image {
+    width: 291px;
+    height: 291px;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .article-cart-title {
+    color: $text-color-blue;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    padding-bottom: 20px;
+    padding-top: 15px;
+  }
+
+  .article-cart-description {
+    color: $text-color-dark-blue;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 130%;
+    padding-bottom: 15px;
+    width: 100%;
+    max-width: 571px;
+    height: 80px;
+    text-overflow: ellipsis;
+  }
+
+  .article-cart-link {
+
+
+    margin-top: auto; /* прижимает к низу карточки */
+    a {
+      color: $text-color-blue;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: auto;
+      text-underline-offset: auto;
+      text-underline-position: from-font;
+    }
+  }
+}

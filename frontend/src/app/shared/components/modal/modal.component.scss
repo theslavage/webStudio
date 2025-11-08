@@ -1,0 +1,209 @@
+
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-window {
+  width: 727px;
+  height: 489px;
+  background: #fff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-container {
+  width: 422px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-title {
+  color: #709FDC;
+  font-family: 'Lora',sans-serif;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 400;
+  padding-bottom: 20px;
+  text-align: center;
+  margin: 0;
+  width: 443px;
+}
+
+.modal-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modal-form input,
+.modal-form select {
+  width: 100%;
+  transition: border 0.3s;
+  outline: none;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 2px solid $text-color-blue;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: $text-color-dark-blue;
+
+}
+
+.modal-form input:focus,
+.modal-form select:focus {
+  border-color: $text-color-blue;
+}
+
+
+.modal-form input.invalid,
+.modal-form select.invalid {
+  border-color: #ff4d4d;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: #709FDC;
+  padding: 15px 40px;
+  border-color: transparent;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 15px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: $text-color-dark-blue;
+}
+
+.submit-btn:disabled {
+  background: #c9c9c9;
+  cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.select-wrap { position: relative; }
+.select-wrap.invalid .select-control { border-color: #ff4d4d; }
+
+.select-control {
+  width: 100%;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: border 0.3s;
+  outline: none;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 2px solid $text-color-blue;
+  background: #fff; /* ← вот здесь фон */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: $text-color-blue;
+}
+.select-control:focus { border-color: #007bff; }
+
+.select-menu {
+
+  position: absolute; top: calc(100% + 6px); left: 0; right: 0;
+  max-height: 220px; overflow: auto; background: #fff;
+  border: 1px solid #ddd; border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 10; padding: 6px;
+}
+
+.option {
+  padding: 10px 12px; border-radius: 6px; cursor: pointer; user-select: none;
+}
+
+.option:hover,
+.option:focus {
+  background: $text-color-blue; color: #fff;
+}
+
+
+.modal-form input::placeholder {
+  color: #A8ABA7;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+
+
+
+.error-message {
+  color: #ff3b3b;
+  font-size: 14px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.success-block {
+  text-align: center;
+  padding: 20px;
+  display: contents;
+}
+
+.success-block .modal-title {
+  font-size: 38px;
+}
+
+.success-block .modal-text {
+  font-size: 14px;
+  color: #1E1A2B;
+  margin: 0;
+  padding-bottom: 40px;
+}
+
+.success-block .button {
+  background: $text-color-blue ;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+}
+.success-block .button:hover {
+  background: $text-color-blue;
+}
+

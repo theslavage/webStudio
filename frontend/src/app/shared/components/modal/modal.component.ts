@@ -1,0 +1,128 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ModalService, ModalContext } from '../../services/modal.service';
+import {Observable, Subscription} from 'rxjs';
+import {OrderService} from "../../services/order.service";
+import {DefaultResponse, OrderRequest} from "../../../../types/order.type";
+
+@Component({
+  selector: 'app-modal',
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.scss']
+})
+export class ModalComponent implements OnInit {
+  isOpen$: Observable<boolean>;
+  context$: Observable<ModalContext | null>;
+  form!: FormGroup;
+
+  // список услуг
+  services: string[] = [
+    'Создание сайтов',
+    'Продвижение',
+    'Реклама',
+    'Копирайтинг',
+  ];
+
+  isSuccess = false;
+  isError = false;
+  loading = false;
+
+  private contextSub?: Subscription;
+
+  constructor(
+    private fb: FormBuilder,
+    private modal: ModalService,
+    private orderService: OrderService
+  ) {
+    this.isOpen$ = this.modal.isOpen$;
+    this.context$ = this.modal.context$;
+  }
+
+  ngOnInit() {
+    this.form = this.fb.group({
+      service: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      phone: ['', [Validators.required, Validators.pattern(/^(\+?\d{10,15})$/)]]
+    });
+
+    this.contextSub = this.context$.subscribe((ctx: ModalContext | null) => {
+      if (ctx?.payload?.serviceName) {
+        this.form.patchValue({ service: ctx.payload.serviceName });
+      }
+    });
+  }
+
+  onSubmit() {
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+
+
+
+    this.loading = true;
+    this.isError = false;
+
+    const data: OrderRequest = {
+      name: this.form.value.name,
+      phone: this.form.value.phone,
+      service: this.form.value.service,
+      type: 'order'
+    };
+
+    this.orderService.sendOrder(data).subscribe({
+      next: (res: DefaultResponse) => {
+        this.loading = false;
+        if (!res.error) {
+          this.isSuccess = true;
+        } else {
+          this.isError = true;
+        }
+      },
+      error: () => {
+        this.loading = false;
+        this.isError = true;
+      }
+    });
+
+  }
+
+  closeModal() {
+    this.isSuccess = false;
+    this.isError = false;
+    this.loading = false;
+    this.form.reset();
+    this.modal.close();
+  }
+
+  ngOnDestroy(): void {
+    this.contextSub?.unsubscribe();
+  }
+
+  dropdownOpen = false;
+  focusedIndex = -1;
+
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+    if (this.dropdownOpen) {
+      const i = this.services.indexOf(this.form.value.service);
+      this.focusedIndex = i >= 0 ? i : 0;
+    }
+  }
+
+  selectService(s: string) {
+    this.form.patchValue({ service: s });
+    this.dropdownOpen = false;
+  }
+
+  onKeydown(e: KeyboardEvent) {
+    if (!this.dropdownOpen) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); this.focusedIndex = (this.focusedIndex + 1) % this.services.length; }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); this.focusedIndex = (this.focusedIndex - 1 + this.services.length) % this.services.length; }
+    else if (e.key === 'Enter') { e.preventDefault(); this.selectService(this.services[this.focusedIndex]); }
+    else if (e.key === 'Escape') { e.preventDefault(); this.dropdownOpen = false; }
+  }
+
+
+
+}
