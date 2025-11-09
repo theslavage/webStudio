@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ArticleTopService} from "../../shared/services/article-top.service";
 import {ArticleType} from "../../../types/article.type";
 import {OwlOptions} from "ngx-owl-carousel-o";
 import {ModalService} from "../../shared/services/modal.service";
+import {ArticleService} from "../../shared/services/article.service";
 
 @Component({
   selector: 'app-main',
@@ -56,7 +56,7 @@ export class MainComponent implements OnInit {
     },
   ]
 
-  constructor(private articleTopService: ArticleTopService,
+  constructor(private articleTopService: ArticleService,
               private modal: ModalService,) { }
 
   ngOnInit(): void {

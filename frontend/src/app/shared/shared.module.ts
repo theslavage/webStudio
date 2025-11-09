@@ -4,6 +4,7 @@ import {RouterModule} from "@angular/router";
 import {ArticleCartComponent} from "./components/article-cart/article-cart.component";
 import { ModalComponent } from './components/modal/modal.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {BlogComponent} from "../views/article/blog/blog.component";
 
 
 
@@ -14,6 +15,6 @@ import {ReactiveFormsModule} from "@angular/forms";
     RouterModule,
     ReactiveFormsModule,
   ],
-  exports: [ArticleCartComponent, ModalComponent],
+  exports: [ArticleCartComponent, ModalComponent,],
 })
 export class SharedModule { }

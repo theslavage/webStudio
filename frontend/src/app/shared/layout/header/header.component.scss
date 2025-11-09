@@ -22,12 +22,14 @@
           list-style: none;
           cursor: pointer;
 
+
           a {
             color: $text-color-dark-blue;
             font-family: "Montserrat", sans-serif;
             font-size: 16px;
             font-style: normal;
             font-weight: 500;
+            text-decoration: none;
           }
         }
       }
