@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1e55dab-cb92-4260-9767-876cb6ce3471" name="Changes" comment="addedModalWindow">
+    <list default="true" id="a1e55dab-cb92-4260-9767-876cb6ce3471" name="Changes" comment="addedBlog">
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/arrows/Next.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/arrows/Previous.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/types/articles-response.type.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/article-top.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,36 +51,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/twin9/Documents/Frontend/webStudio/frontend/src/app/shared/services",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "C:\\Users\\twin9\\Documents\\Frontend\\webStudio\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/twin9/Documents/Frontend/webStudio/frontend/src/types&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\twin9\\Documents\\Frontend\\webStudio\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\app\shared\services" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\types" />
+      <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\app\shared\services" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\images\reviews" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\fonts" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\images\page" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\images\arrows" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\backend\public\images" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\app\shared\services" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\app\views" />
       <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\app\shared" />
-      <recent name="C:\Users\twin9\Documents\Frontend\webStudio\frontend\src\assets\images\products" />
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server">
@@ -137,7 +133,9 @@
       <workItem from="1762590106121" duration="11566000" />
       <workItem from="1762607803453" duration="8718000" />
       <workItem from="1762617146417" duration="991000" />
-      <workItem from="1762689770656" duration="6826000" />
+      <workItem from="1762689770656" duration="9214000" />
+      <workItem from="1762702554325" duration="10691000" />
+      <workItem from="1762764534366" duration="2992000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -195,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762617675875</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="addedBlog">
+      <option name="closed" value="true" />
+      <created>1762698349597</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762698349597</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +215,8 @@
     <MESSAGE value="addedArticleBlock" />
     <MESSAGE value="addedMapAndReviews" />
     <MESSAGE value="addedModalWindow" />
-    <option name="LAST_COMMIT_MESSAGE" value="addedModalWindow" />
+    <MESSAGE value="addedBlog" />
+    <option name="LAST_COMMIT_MESSAGE" value="addedBlog" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

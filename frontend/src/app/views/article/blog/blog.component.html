@@ -1,0 +1,100 @@
+<section class="blog">
+  <div class="container">
+    <div class="blog-title">Блог</div>
+    <div class="blog-head">
+      <div class="blog-applied-filters">
+        <div class="blog-applied-filter" *ngFor="let filter of activeFilters">
+          <span>{{ filter }}</span>
+          <a (click)="removeFilter(filter)">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_300_598)">
+                <line x1="1.93553" y1="2.65002" x2="13.9563" y2="14.6708"
+                      stroke="#709FDC" stroke-linecap="round"/>
+                <line x1="13.9236" y1="2.62984" x2="1.90278" y2="14.6507"
+                      stroke="#709FDC" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="blog-sorting" [class.open]="isFilterOpen">
+        <div class="blog-sorting-head" (click)="toggleFilter()">
+          <span>Фильтр</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 14C9.41668 14 8.83335 13.775 8.39168 13.3334L2.95835 7.90003C2.71668 7.65837 2.71668 7.25837 2.95835 7.0167C3.20002 6.77503 3.60002 6.77503 3.84168 7.0167L9.27502 12.45C9.67502 12.85 10.325 12.85 10.725 12.45L16.1583 7.0167C16.4 6.77503 16.8 6.77503 17.0417 7.0167C17.2833 7.25837 17.2833 7.65837 17.0417 7.90003L11.6083 13.3334C11.1667 13.775 10.5833 14 10 14Z" fill="#071739"/>
+          </svg>
+
+        </div>
+        <div class="blog-sorting-body">
+          <div class="blog-sorting-item"
+
+               *ngFor="let filter of filters"
+               (click)="toggleActiveFilter(filter)"
+
+          >
+            <div class="blog-sorting-item-text"
+                 [class.active]="isActive(filter)"
+            > {{ filter }}</div>
+            <div class="blog-sorting-item-action"
+                 [class.active]="isActive(filter)"
+            >
+              <ng-container *ngIf="isActive(filter); else plusIcon">
+                <!-- активная иконка -->
+                <svg width="8" height="8" viewBox="0 0 7 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5.8651e-05 1.48799H6.28806V-1.45435e-05H5.8651e-05V1.48799Z" fill="#071739"/>
+                </svg>
+              </ng-container>
+              <ng-template #plusIcon>
+                <!-- обычная (неактивная) иконка -->
+                <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M10.4399 4.39198H5.97595V-2.47955e-05H4.46395V4.39198H-5.37038e-05V5.80798H4.46395V10.176H5.97595V5.80798H10.4399V4.39198Z"
+                    fill="#BEBEBE"/>
+                </svg>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blog-carts">
+      <article-cart
+        *ngFor="let article of articles"
+        [articleTops]="article">
+      </article-cart>
+    </div>
+
+    <div class="pagination">
+      <div
+        class="pagination-arrow"
+        [class.disabled]="currentPage === 1"
+        (click)="prevPage()"
+      >
+        <img src="assets/images/arrows/Previous.png" alt="Назад">
+      </div>
+
+      <div class="pagination-pages">
+        <a
+          *ngFor="let page of pages"
+          class="pagination-page"
+          [class.active]="page === currentPage"
+          (click)="goToPage(page)"
+        >
+          {{ page }}
+        </a>
+      </div>
+
+      <div
+        class="pagination-arrow"
+        [class.disabled]="currentPage === totalPages"
+        (click)="nextPage()"
+      >
+        <img src="assets/images/arrows/Next.png" alt="Вперёд">
+      </div>
+    </div>
+
+
+  </div>
+</section>
