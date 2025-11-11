@@ -8,9 +8,16 @@
     </div>
 
     <div class="article-cart-title">{{ articleTops.title }}</div>
-    <div class="article-cart-description">{{ articleTops.description }}</div>
-    <div class="article-cart-link">
-      <a href="#">Читать дальше</a>
+    <div class="article-cart-description">
+    <span *ngIf="!isExpanded">
+      {{ articleTops.description | shortenDescription:150 }}
+    </span>
+      <span *ngIf="isExpanded">
+      {{ articleTops.description }}
+    </span>
     </div>
+  <div class="article-cart-link">
+    <a [routerLink]="['/blog', articleTops.url]" routerLinkActive="active">Читать дальше</a>
+  </div>
 </div>
 

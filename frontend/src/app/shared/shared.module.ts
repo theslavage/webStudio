@@ -5,11 +5,12 @@ import {ArticleCartComponent} from "./components/article-cart/article-cart.compo
 import { ModalComponent } from './components/modal/modal.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {BlogComponent} from "../views/article/blog/blog.component";
+import { ShortenDescriptionPipe } from './pipes/shorten-description.pipe';
 
 
 
 @NgModule({
-  declarations: [ArticleCartComponent, ModalComponent],
+  declarations: [ArticleCartComponent, ModalComponent, ShortenDescriptionPipe],
   imports: [
     CommonModule,
     RouterModule,

@@ -10,8 +10,11 @@ import {environment} from "../../../../environments/environment";
 export class ArticleCartComponent implements OnInit {
 
   @Input() articleTops!: ArticleType;
-
   serverStaticPath = environment.serverStaticPath;
+
+
+  isExpanded = false;
+
   constructor() { }
 
   ngOnInit(): void {

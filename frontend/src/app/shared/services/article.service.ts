@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {ArticleType} from "../../../types/article.type";
 import {environment} from "../../../environments/environment";
 import {ArticlesResponseType} from "../../../types/articles-response.type";
+import {ArticleDetailResponseType} from "../../../types/article-detail-response.type";
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,14 @@ export class ArticleService {
     });
 
     return this.http.get<ArticlesResponseType>(`${environment.api}articles`, { params });
+  }
+
+  getArticleByUrl(url: string): Observable<ArticleDetailResponseType> {
+    return this.http.get<ArticleDetailResponseType>(`${environment.api}articles/${url}`);
+  }
+
+  getRelatedArticles(url: string) {
+    return this.http.get<ArticleType[]>(`${environment.api}articles/related/${url}`);
   }
 
   /** 👇 Простая функция перевода русских категорий в латиницу */
