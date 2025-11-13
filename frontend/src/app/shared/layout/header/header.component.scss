@@ -30,6 +30,7 @@
             font-style: normal;
             font-weight: 500;
             text-decoration: none;
+
           }
         }
       }
@@ -91,3 +92,9 @@
     }
   }
 }
+a.active-link {
+  color: #709fdc !important; // синий (можешь подставить свой $text-color-blue)
+  font-weight: 600;
+  text-decoration: underline; // или border-bottom, если хочешь подчёркивание
+}
+

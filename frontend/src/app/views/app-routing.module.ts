@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {AppComponent} from "./app.component";
 import {LayoutComponent} from "../shared/layout/layout.component";
 import {MainComponent} from "./main/main.component";
+import {PrivacyComponent} from "./privacy/privacy.component";
 
 const routes: Routes = [
   {
@@ -10,14 +11,16 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {path: '', component: MainComponent},
+      {path: 'privacy', component: PrivacyComponent },
       {path: '', loadChildren: () => import('../views/user/user.module').then(m => m.UserModule)},
       {path: '', loadChildren: () => import('../views/article/article.module').then(m => m.ArticleModule)},
+
     ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {anchorScrolling: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

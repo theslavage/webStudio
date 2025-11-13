@@ -5,6 +5,7 @@ import {ArticleType} from "../../../types/article.type";
 import {environment} from "../../../environments/environment";
 import {ArticlesResponseType} from "../../../types/articles-response.type";
 import {ArticleDetailResponseType} from "../../../types/article-detail-response.type";
+import {CommentType} from "../../../types/comment.type";
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +37,15 @@ export class ArticleService {
 
   getRelatedArticles(url: string) {
     return this.http.get<ArticleType[]>(`${environment.api}articles/related/${url}`);
+  }
+
+  getComments(articleId: string, offset = 0, limit = 3) {
+    return this.http.get<{
+      allCount: number;
+      comments: CommentType[];
+    }>(
+      `${environment.api}comments?article=${articleId}&offset=${offset}&limit=${limit}`
+    );
   }
 
   /** 👇 Простая функция перевода русских категорий в латиницу */

@@ -15,10 +15,15 @@
 
         <!-- 🧾 Форма -->
         <ng-template #formTemplate>
-          <h2 class="modal-title">Оставьте заявку</h2>
+          <h2 class="modal-title">
+            {{ modalType === 'callback' ? 'Бесплатная консультация' : 'Оставьте заявку' }}
+          </h2>
+
           <form [formGroup]="form" (ngSubmit)="onSubmit()" class="modal-form">
             <!-- 💛 Кастомный выпадающий список -->
-            <div class="select-wrap" [class.invalid]="form.get('service')?.invalid && form.get('service')?.touched">
+            <div class="select-wrap"
+                 *ngIf="modalType !== 'callback'"
+                 [class.invalid]="form.get('service')?.invalid && form.get('service')?.touched">
               <button
                 type="button"
                 class="select-control"
@@ -65,7 +70,8 @@
               type="submit"
               class="submit-btn"
               [disabled]="form.invalid || loading">
-              {{ loading ? 'Отправка...' : 'Отправить' }}
+              {{ loading ? 'Отправка...' : (modalType === 'callback' ? 'Заказать звонок' : 'Отправить') }}
+
             </button>
 
             <!-- Ошибка -->

@@ -96,7 +96,7 @@
           .detail__body-social {
             display: flex;
             align-items: center;
-            padding-top: 60px;
+            padding-top: 40px;
             padding-bottom: 60px;
 
             .detail__body-social-title {
@@ -117,7 +117,26 @@
 
             .detail__body-comment-title {
               @include head-lora-38;
-              padding-bottom: 40px;
+
+              &.with-padding {
+                padding-top: 60px;
+              }
+            }
+
+            .detail__body-comment-auth {
+              padding-top: 20px;
+              padding-bottom: 60px;
+              color: $text-color-dark-blue;
+              font-family: 'Montserrat', sans-serif;
+              font-size: 14px;
+              font-style: normal;
+              font-weight: 400;
+
+
+              a {
+                color: $text-color-blue;
+                text-decoration: none;
+              }
             }
 
             textarea.input {
@@ -142,6 +161,7 @@
 
               outline: none;
               transition: border-color 0.2s ease;
+              margin-top: 40px;
 
               &::placeholder {
                 color: #A8ABA7;
@@ -238,38 +258,49 @@
                   display: flex;
                   align-items: center;
                   gap: 15px;
-                  .like {
-                    display: flex;
-                    align-items: center;
-                    gap: 3px;
-                    cursor: pointer;
-                    p {
-                      color: $text-color-blue;
-                      font-family:' Montserrat' ,sans-serif;
-                      font-size: 14px;
-                      font-style: normal;
-                      font-weight: 600;
-                    }
-                  }
 
+                  .like,
                   .dislike {
                     display: flex;
                     align-items: center;
                     gap: 3px;
                     cursor: pointer;
+                    transition: color 0.2s ease, transform 0.1s ease;
+
+                    svg {
+                      transition: stroke 0.2s ease, fill 0.2s ease;
+                    }
+
                     p {
-                      color:$text-color-dark-blue;
+                      color: #071739; // по умолчанию (тёмный)
                       font-family: 'Montserrat', sans-serif;
                       font-size: 14px;
-                      font-style: normal;
                       font-weight: 600;
+                      margin: 0;
+                      transition: color 0.2s ease;
+                    }
+
+                    &:active {
+                      transform: scale(0.95); // легкий клик эффект
+                    }
+
+                    &.active {
+                      p {
+                        color: #709FDC; // ✅ наш голос подсвечивается
+                      }
+
+                      svg path {
+                        stroke: #709FDC; // ✅ подсветка иконки
+
+                      }
                     }
                   }
-
-                  .spam {
-                    cursor: pointer;
+                  &.disabled {
+                    pointer-events: none;
+                    cursor: default;
                   }
                 }
+
               }
 
               .detail__body-comment-more {
@@ -290,7 +321,6 @@
             }
           }
         }
-
         .detail__body-content-info-bar {
           padding-top: 60px;
           padding-left: 130px;
@@ -315,12 +345,28 @@
         }
       }
 
-
-
-
     }
   }
 }
+
+.detail__body-comment-empty {
+  margin-top: 20px;
+  color: #071739;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.detail__body-comment-no {
+  margin-top: 30px;
+  color: #A8ABA7;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  text-align: left;
+}
+
+
+
 
 :host ::ng-deep .detail__body-content-block-description {
   h1 {
@@ -328,7 +374,7 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 130%;
     margin: 0;
     padding-bottom: 20px;
@@ -343,6 +389,7 @@
     line-height: 130%;
     margin: 0;
     padding-bottom: 20px;
+    padding-top: 20px;
   }
 
   p {
@@ -374,7 +421,6 @@
      position: relative;
      padding-left: 15px;
      color: #071739;
-     font-family: Montserrat;
      font-size: 14px;
      font-style: normal;
      font-weight: 400;
@@ -391,5 +437,17 @@
        font-weight: 400;
      }
    }
+
+  /* ✅ Новое правило для жирного текста */
+  p > b:first-child {
+
+    color: $text-color-dark-blue;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+
+  }
 
 }

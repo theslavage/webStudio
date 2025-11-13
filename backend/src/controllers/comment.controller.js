@@ -35,7 +35,7 @@ class CommentController {
                 .json({error: true, message: "Не передан параметр url"});
         }
 
-        const offset = req.query['offset'] || 3;
+        const offset = req.query['offset'] || 0;
         const loadCount = 10;
 
         let comments = await CommentModel.find({article: article})
@@ -188,3 +188,4 @@ class CommentController {
 }
 
 module.exports = CommentController;
+

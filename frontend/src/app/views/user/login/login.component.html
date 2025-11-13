@@ -1,36 +1,52 @@
-<section class="login" [formGroup]="loginForm" >
+<section class="login" [formGroup]="loginForm">
   <div class="container">
     <div class="auth-form">
-      <div class="auth-title">
-        Войти в личный кабинет
-      </div>
+      <div class="auth-title">Войти в личный кабинет</div>
+
       <div class="auth-inputs">
         <div class="auth-input">
-          <input type="text" class="input"
-                 [ngStyle]="{'border-color': loginForm.get('email')?.invalid
-                 && (loginForm.get('email')?.dirty ||  loginForm.get('email')?.touched) ? 'red' : '' }"
-                 placeholder="Электронная почта" formControlName="email">
+          <input
+            type="text"
+            class="input"
+            placeholder="Электронная почта"
+            formControlName="email"
+            [class.invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+          />
         </div>
+
         <div class="auth-input">
-          <input type="password" class="input"
-                 [ngStyle]="{'border-color': loginForm.get('password')?.invalid
-                 && (loginForm.get('password')?.dirty ||  loginForm.get('password')?.touched) ? 'red' : '' }"
-                 placeholder="Пароль" formControlName="password">
+          <input
+            type="password"
+            class="input"
+            placeholder="Пароль"
+            formControlName="password"
+            [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+          />
         </div>
+
         <div class="auth-checkbox">
-          <input type="checkbox" id="remember" formControlName="rememberMe">
+          <input type="checkbox" id="remember" formControlName="rememberMe" />
           <label for="remember">Запомнить меня</label>
         </div>
       </div>
+
       <div class="auth-button">
-        <button class="button" [disabled]="loginForm.invalid" (click)="login()">Войти</button>
+        <button
+          class="button"
+          [disabled]="!loginForm.get('email')?.value || !loginForm.get('password')?.value"
+          (click)="login()"
+        >
+          Войти
+        </button>
       </div>
+
       <div class="auth-link">
         Нет аккаунта? <a routerLink="/signup">Пройдите регистрацию</a>
       </div>
     </div>
+
     <div class="page-image">
-      <img src="/assets/images/page/login.png" alt="Девушка">
+      <img src="/assets/images/page/login.png" alt="Девушка" />
     </div>
   </div>
 </section>

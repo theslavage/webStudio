@@ -2,8 +2,11 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 export type ModalContext = {
-  source: 'product' | 'slider';
-  payload?: any;
+  source: 'product' | 'slider' | 'callback';
+  payload?: {
+    serviceName?: string;
+    cardId?: string | number;
+  };
 };
 
 

@@ -10,3 +10,4 @@ router.get('/:id/actions', Auth.authenticate, CommentController.getCommentAction
 router.get('/article-comment-actions', Auth.authenticate, CommentController.getArticleCommentActions);
 
 module.exports = router;
+

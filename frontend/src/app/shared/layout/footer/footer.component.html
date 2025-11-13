@@ -9,19 +9,22 @@
         <nav>
           <ul>
             <li>
-              <a>Услуги</a>
+              <a routerLink="/" fragment="products">Услуги</a>
             </li>
             <li>
-              <a>О нас</a>
+              <a routerLink="/" fragment="about">О нас</a>
             </li>
             <li>
-              <a>Статьи</a>
+              <a routerLink="/blog"
+                 routerLinkActive="active-link"
+                 [routerLinkActiveOptions]="{ exact: true }"
+              >Статьи</a>
             </li>
             <li>
-              <a>Отзывы</a>
+              <a  routerLink="/" fragment="reviews">Отзывы</a>
             </li>
             <li>
-              <a>Контакты</a>
+              <a  routerLink="/" fragment="map">Контакты</a>
             </li>
           </ul>
         </nav>
@@ -35,13 +38,13 @@
       <div class="footer-down-block">
         <div class="footer-down-title">Телефон</div>
         <div class="footer-down-text">+7 (499) 343-13-34</div>
-        <a href="tel:+74993431334">
-          <button class="button little-button">Перезвоните мне</button>
+        <a>
+          <button class="button little-button" (click)="openCallback()">Перезвоните мне</button>
         </a>
       </div>
       <div class="footer-down-block">
         <div class="footer-down-title">E-mail</div>
-        <div class="footer-down-text">info@itstorm.com</div>
+        <a href="mailto:info@itstorm.com" class="footer-down-text">info@itstorm.com</a>
       </div>
       <div class="footer-down-block">
         <div class="footer-down-title">Мы в социальных сетях:</div>

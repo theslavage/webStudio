@@ -4,18 +4,20 @@ import {RouterModule} from "@angular/router";
 import {ArticleCartComponent} from "./components/article-cart/article-cart.component";
 import { ModalComponent } from './components/modal/modal.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import {BlogComponent} from "../views/article/blog/blog.component";
 import { ShortenDescriptionPipe } from './pipes/shorten-description.pipe';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 
 @NgModule({
-  declarations: [ArticleCartComponent, ModalComponent, ShortenDescriptionPipe],
+  declarations: [ArticleCartComponent, ModalComponent, ShortenDescriptionPipe, LoaderComponent],
   imports: [
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
+    MatProgressSpinnerModule
   ],
-  exports: [ArticleCartComponent, ModalComponent,],
+  exports: [ArticleCartComponent, ModalComponent, LoaderComponent],
 })
 export class SharedModule { }

@@ -4,22 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1e55dab-cb92-4260-9767-876cb6ce3471" name="Changes" comment="realizedArticleFilter">
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/images/page/detail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/types/article-detail-response.type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/types/comment.type.ts" afterDir="false" />
+    <list default="true" id="a1e55dab-cb92-4260-9767-876cb6ce3471" name="Changes" comment="addedDetailArticle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/article-cart/article-cart.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/article-cart/article-cart.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/article-cart/article-cart.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/article-cart/article-cart.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/article-cart/article-cart.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/article-cart/article-cart.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/comment.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/comment.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/models/comment.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/comment.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/routes/comment.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/comment.routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/modal.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/modal.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/article/article-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/article/article-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/article/article.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/article/article.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/slider/slider.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/slider/slider.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +167,14 @@
       <workItem from="1762764534366" duration="6250000" />
       <workItem from="1762778907713" duration="9488000" />
       <workItem from="1762789485894" duration="1259000" />
-      <workItem from="1762847600993" duration="4842000" />
+      <workItem from="1762847600993" duration="25668000" />
+      <workItem from="1762931970702" duration="8222000" />
+      <workItem from="1762949158520" duration="86000" />
+      <workItem from="1762952173334" duration="1583000" />
+      <workItem from="1762957674524" duration="2321000" />
+      <workItem from="1762968010448" duration="156000" />
+      <workItem from="1763025324179" duration="6564000" />
+      <workItem from="1763034409512" duration="5445000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -223,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762767849626</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="addedDetailArticle">
+      <option name="closed" value="true" />
+      <created>1762859987997</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1762859987997</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,18 +272,36 @@
     <MESSAGE value="addedModalWindow" />
     <MESSAGE value="addedBlog" />
     <MESSAGE value="realizedArticleFilter" />
-    <option name="LAST_COMMIT_MESSAGE" value="realizedArticleFilter" />
+    <MESSAGE value="addedDetailArticle" />
+    <option name="LAST_COMMIT_MESSAGE" value="addedDetailArticle" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/frontend/src/app/views/app-routing.module.ts</url>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/app/views/user/user.module.ts</url>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/app/views/app.module.ts</url>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.html</url>
+          <line>16</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts</url>
+          <line>79</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.ts</url>
+          <line>161</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

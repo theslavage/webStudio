@@ -19,6 +19,7 @@ import {SliderComponent} from "./main/slider/slider.component";
 import {SharedModule} from "../shared/shared.module";
 import {CarouselModule} from "ngx-owl-carousel-o";
 import {ModalComponent} from "../shared/components/modal/modal.component";
+import { PrivacyComponent } from './privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {ModalComponent} from "../shared/components/modal/modal.component";
     FooterComponent,
     MainComponent,
     SliderComponent,
+    PrivacyComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,7 @@ import {ModalComponent} from "../shared/components/modal/modal.component";
     CarouselModule,
     FormsModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}},

@@ -5,6 +5,7 @@ import { LoginResponseType } from "../../../types/login-response.type";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { environment } from "../../../environments/environment";
 import { MatSnackBar } from "@angular/material/snack-bar";
+import {UserType} from "../../../types/user.type";
 
 @Injectable({
   providedIn: 'root'
@@ -24,43 +25,56 @@ export class AuthService {
     this.isLogged = !!localStorage.getItem(this.accessTokenKey);
   }
 
-  // === Вход ===
   login(email: string, password: string, rememberMe: boolean): Observable<DefaultResponseType | LoginResponseType> {
     return this.http.post<DefaultResponseType | LoginResponseType>(environment.api + 'login', {
       email, password, rememberMe
     }).pipe(
-      tap((res: any) => {
-        if (!res?.error) {
+      tap((res: DefaultResponseType | LoginResponseType) => {
+
+        // если error есть — это DefaultResponseType
+        if ('error' in res && res.error) {
+          return;
+        }
+
+        // если есть accessToken — это LoginResponseType
+        if ('accessToken' in res) {
           this.setToken(res.accessToken, res.refreshToken);
           this.userId = res.userId;
           this.fetchUserName();
-          this.snackBar.open(' Вы успешно вошли в систему');
+          this.snackBar.open('Вы успешно вошли в систему');
         }
       })
+
     );
   }
-  // Выход
+
   signup(name: string, email: string, password: string): Observable<DefaultResponseType | LoginResponseType> {
     return this.http.post<DefaultResponseType | LoginResponseType>(environment.api + 'signup', {
       name, email, password,
     }).pipe(
-      tap((res: any) => {
-        if (!res?.error) {
+      tap((res: DefaultResponseType | LoginResponseType) => {
+
+        if ('error' in res && res.error) {
+          return;
+        }
+
+        if ('accessToken' in res) {
           this.setToken(res.accessToken, res.refreshToken);
           this.userId = res.userId;
           this.fetchUserName();
-          this.snackBar.open(' Вы успешно зарегистрировались');
+          this.snackBar.open('Вы успешно зарегистрировались');
         }
       })
+
+
     );
   }
 
-  // === Получаем имя пользователя ===
   private fetchUserName(): void {
     const accessToken = localStorage.getItem(this.accessTokenKey);
     if (!accessToken) return;
 
-    this.http.get<any>(environment.api + 'users', {
+    this.http.get<UserType>(environment.api + 'users', {
       headers: { 'x-auth': accessToken }
     }).subscribe({
       next: (user) => {
@@ -75,7 +89,6 @@ export class AuthService {
     });
   }
 
-  // === Выход (через POST /api/logout) ===
   logout(): void {
     const { accessToken, refreshToken } = this.getTokens();
 

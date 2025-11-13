@@ -15,6 +15,14 @@ export class ModalComponent implements OnInit {
   context$: Observable<ModalContext | null>;
   form!: FormGroup;
 
+  callbackData = {
+    name: '',
+    phone: ''
+  };
+
+  modalType: 'product' | 'slider' | 'callback' = 'product';
+
+
   // список услуг
   services: string[] = [
     'Создание сайтов',
@@ -31,26 +39,54 @@ export class ModalComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private modal: ModalService,
+    private modalService: ModalService,
     private orderService: OrderService
   ) {
-    this.isOpen$ = this.modal.isOpen$;
-    this.context$ = this.modal.context$;
+    this.isOpen$ = this.modalService.isOpen$;
+    this.context$ = this.modalService.context$;
   }
 
+
   ngOnInit() {
+    // форма
     this.form = this.fb.group({
       service: ['', Validators.required],
       name: ['', [Validators.required, Validators.minLength(2)]],
       phone: ['', [Validators.required, Validators.pattern(/^(\+?\d{10,15})$/)]]
     });
 
+    // автозаполнение "service" если модалка открыта с определённым serviceName
     this.contextSub = this.context$.subscribe((ctx: ModalContext | null) => {
       if (ctx?.payload?.serviceName) {
         this.form.patchValue({ service: ctx.payload.serviceName });
       }
     });
+
+    // отслеживаем тип модалки
+    this.modalService.context$.subscribe(ctx => {
+      if (ctx) {
+        this.modalType = ctx.source;
+
+        // -----------------------------------
+        // 🔥 ЛОГИКА ДЛЯ CALLBACK
+        // -----------------------------------
+        if (this.modalType === 'callback') {
+          // убираем проверку обязательности
+          this.form.get('service')?.clearValidators();
+          this.form.get('service')?.updateValueAndValidity();
+
+          // очищаем значение service
+          this.form.patchValue({ service: '' });
+        }
+        else {
+          // если НЕ callback — возвращаем обязательность
+          this.form.get('service')?.setValidators([Validators.required]);
+          this.form.get('service')?.updateValueAndValidity();
+        }
+      }
+    });
   }
+
 
   onSubmit() {
     if (this.form.invalid) {
@@ -63,10 +99,13 @@ export class ModalComponent implements OnInit {
     this.loading = true;
     this.isError = false;
 
+
     const data: OrderRequest = {
       name: this.form.value.name,
       phone: this.form.value.phone,
-      service: this.form.value.service,
+      service: this.modalType === 'callback'
+        ? 'Обратный звонок'
+        : this.form.value.service,
       type: 'order'
     };
 
@@ -92,7 +131,8 @@ export class ModalComponent implements OnInit {
     this.isError = false;
     this.loading = false;
     this.form.reset();
-    this.modal.close();
+    this.modalService.close();
+
   }
 
   ngOnDestroy(): void {
@@ -121,6 +161,16 @@ export class ModalComponent implements OnInit {
     else if (e.key === 'ArrowUp') { e.preventDefault(); this.focusedIndex = (this.focusedIndex - 1 + this.services.length) % this.services.length; }
     else if (e.key === 'Enter') { e.preventDefault(); this.selectService(this.services[this.focusedIndex]); }
     else if (e.key === 'Escape') { e.preventDefault(); this.dropdownOpen = false; }
+  }
+
+  submitCallback(event: Event) {
+    event.preventDefault();
+
+    console.log("Заявка на звонок:", this.callbackData);
+
+    // Здесь можно отправить на сервер или в Telegram bot
+
+    this.modalService.close();
   }
 
 

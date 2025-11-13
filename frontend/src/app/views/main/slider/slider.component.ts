@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalService } from '../../../shared/services/modal.service';
+import {SliderCard} from "../../../../types/slider-card.type";
 
 @Component({
   selector: 'app-slider',
@@ -10,13 +11,13 @@ export class SliderComponent {
 
   constructor(private modal: ModalService) {}
 
-  openSliderModal(card: any) {
+  openSliderModal(card: SliderCard) {
     this.modal.open({ source: 'slider', payload: { cardId: card?.id } });
   }
 
   currentIndex = 0;
 
-  cards = [
+  cards: SliderCard[] = [
     {
       image: '/assets/images/slider/Banner1.png',
       title: 'Продвижение в Instagram для вашего бизнеса  <span class="highlight">-15%</span>!',

@@ -5,17 +5,19 @@ import { ArticleRoutingModule } from './article-routing.module';
 import { BlogComponent } from './blog/blog.component';
 import { DetailComponent } from './detail/detail.component';
 import {SharedModule} from "../../shared/shared.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
     BlogComponent,
-    DetailComponent
+    DetailComponent,
   ],
   imports: [
     CommonModule,
     ArticleRoutingModule,
     SharedModule,
+    ReactiveFormsModule,
   ]
 })
 export class ArticleModule { }

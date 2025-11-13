@@ -8,19 +8,21 @@
       <nav>
         <ul>
           <li>
-            <a>Услуги</a>
+            <a routerLink="/" fragment="products">Услуги</a>
           </li>
           <li>
-            <a>О нас</a>
+            <a routerLink="/" fragment="about">О нас</a>
           </li>
           <li>
-            <a routerLink="/blog">Статьи</a>
+            <a routerLink="/blog"
+               routerLinkActive="active-link"
+               [routerLinkActiveOptions]="{ exact: true }">Статьи</a>
           </li>
           <li>
-            <a>Отзывы</a>
+            <a  routerLink="/" fragment="reviews">Отзывы</a>
           </li>
           <li>
-            <a>Контакты</a>
+            <a  routerLink="/" fragment="map">Контакты</a>
           </li>
         </ul>
       </nav>
