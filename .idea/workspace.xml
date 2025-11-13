@@ -4,41 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1e55dab-cb92-4260-9767-876cb6ce3471" name="Changes" comment="addedDetailArticle">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/comment.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/comment.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/models/comment.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/models/comment.model.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/comment.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/comment.routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/footer/footer.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/modal.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/modal.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/shared.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/article/article.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/article/article.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/main.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/main/slider/slider.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/main/slider/slider.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/styles/_global.scss" afterDir="false" />
-    </list>
+    <list default="true" id="a1e55dab-cb92-4260-9767-876cb6ce3471" name="Changes" comment="addedCustomSpinner" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,7 +141,7 @@
       <workItem from="1762968010448" duration="156000" />
       <workItem from="1763025324179" duration="6564000" />
       <workItem from="1763034409512" duration="5445000" />
-      <workItem from="1763045261712" duration="644000" />
+      <workItem from="1763045261712" duration="954000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -257,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762859987997</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="addedCustomSpinner">
+      <option name="closed" value="true" />
+      <created>1763046179239</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1763046179239</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +248,8 @@
     <MESSAGE value="addedBlog" />
     <MESSAGE value="realizedArticleFilter" />
     <MESSAGE value="addedDetailArticle" />
-    <option name="LAST_COMMIT_MESSAGE" value="addedDetailArticle" />
+    <MESSAGE value="addedCustomSpinner" />
+    <option name="LAST_COMMIT_MESSAGE" value="addedCustomSpinner" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
