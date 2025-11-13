@@ -175,6 +175,7 @@
       <workItem from="1762968010448" duration="156000" />
       <workItem from="1763025324179" duration="6564000" />
       <workItem from="1763034409512" duration="5445000" />
+      <workItem from="1763045261712" duration="644000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -294,13 +295,11 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts</url>
           <line>79</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.ts</url>
           <line>161</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>

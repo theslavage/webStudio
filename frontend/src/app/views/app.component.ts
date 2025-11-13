@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import {LoaderService} from "../shared/services/loader.service";
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ import { filter } from 'rxjs/operators';
 export class AppComponent {
   constructor(
     private router: Router,
-    private viewportScroller: ViewportScroller
+    private viewportScroller: ViewportScroller,
+    public loaderService: LoaderService,
   ) {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
