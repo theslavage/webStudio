@@ -1,12 +1,9 @@
 <div class="article-cart" *ngIf="articleTops">
-
     <div class="article-cart-tag">{{ articleTops.category }}</div>
-
     <div
       class="article-cart-image"
       [style.backgroundImage]="'url(' + serverStaticPath + articleTops.image + ')'">
     </div>
-
     <div class="article-cart-title">{{ articleTops.title }}</div>
     <div class="article-cart-description">
     <span *ngIf="!isExpanded">

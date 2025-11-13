@@ -1,7 +1,5 @@
-
 @import "../../../../assets/styles/variables";
 @import "../../../../assets/styles/mixins";
-
 
 .modal-overlay {
   position: fixed;
@@ -64,14 +62,12 @@
   font-style: normal;
   font-weight: 400;
   color: $text-color-dark-blue;
-
 }
 
 .modal-form input:focus,
 .modal-form select:focus {
   border-color: $text-color-blue;
 }
-
 
 .modal-form input.invalid,
 .modal-form select.invalid {
@@ -128,7 +124,7 @@
   box-sizing: border-box;
   border-radius: 3px;
   border: 2px solid $text-color-blue;
-  background: #fff; /* ← вот здесь фон */
+  background: #fff;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-style: normal;
@@ -153,7 +149,6 @@
 .option:focus {
   background: $text-color-blue; color: #fff;
 }
-
 
 .modal-form input::placeholder {
   color: #A8ABA7;

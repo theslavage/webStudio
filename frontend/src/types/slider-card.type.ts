@@ -1,4 +1,3 @@
-
 export interface SliderCard {
   image: string;
   title: string;

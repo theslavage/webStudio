@@ -1,10 +1,8 @@
-
 <ng-container *ngIf="isOpen$ | async">
   <div class="modal-overlay" (click)="closeModal()">
     <div class="modal-window" (click)="$event.stopPropagation()">
       <div class="modal-container">
 
-        <!-- ✅ Успешная отправка -->
         <ng-container *ngIf="isSuccess; else formTemplate">
           <div class="success-block">
             <h2 class="modal-title">Спасибо за вашу заявку!</h2>
@@ -13,14 +11,12 @@
           </div>
         </ng-container>
 
-        <!-- 🧾 Форма -->
         <ng-template #formTemplate>
           <h2 class="modal-title">
             {{ modalType === 'callback' ? 'Бесплатная консультация' : 'Оставьте заявку' }}
           </h2>
 
           <form [formGroup]="form" (ngSubmit)="onSubmit()" class="modal-form">
-            <!-- 💛 Кастомный выпадающий список -->
             <div class="select-wrap"
                  *ngIf="modalType !== 'callback'"
                  [class.invalid]="form.get('service')?.invalid && form.get('service')?.touched">
@@ -51,30 +47,25 @@
               </div>
             </div>
 
-            <!-- Имя -->
             <input
               type="text"
               placeholder="Ваше имя"
               formControlName="name"
               [class.invalid]="form.get('name')?.invalid && form.get('name')?.touched" />
 
-            <!-- Телефон -->
             <input
               type="tel"
               placeholder="Ваш телефон"
               formControlName="phone"
               [class.invalid]="form.get('phone')?.invalid && form.get('phone')?.touched" />
 
-            <!-- 🔒 Кнопка -->
             <button
               type="submit"
               class="submit-btn"
               [disabled]="form.invalid || loading">
               {{ loading ? 'Отправка...' : (modalType === 'callback' ? 'Заказать звонок' : 'Отправить') }}
-
             </button>
 
-            <!-- Ошибка -->
             <div *ngIf="isError" class="error-message">
               Произошла ошибка при отправке формы, попробуйте ещё раз.
             </div>

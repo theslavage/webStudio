@@ -28,25 +28,18 @@
         </div>
         <div class="blog-sorting-body">
           <div class="blog-sorting-item"
-
                *ngFor="let filter of filters"
-               (click)="toggleActiveFilter(filter)"
-
-          >
+               (click)="toggleActiveFilter(filter)">
             <div class="blog-sorting-item-text"
-                 [class.active]="isActive(filter)"
-            > {{ filter }}</div>
+                 [class.active]="isActive(filter)"> {{ filter }}</div>
             <div class="blog-sorting-item-action"
-                 [class.active]="isActive(filter)"
-            >
+                 [class.active]="isActive(filter)">
               <ng-container *ngIf="isActive(filter); else plusIcon">
-                <!-- активная иконка -->
                 <svg width="8" height="8" viewBox="0 0 7 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5.8651e-05 1.48799H6.28806V-1.45435e-05H5.8651e-05V1.48799Z" fill="#071739"/>
                 </svg>
               </ng-container>
               <ng-template #plusIcon>
-                <!-- обычная (неактивная) иконка -->
                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -65,36 +58,28 @@
         [articleTops]="article">
       </article-cart>
     </div>
-
     <div class="pagination">
       <div
         class="pagination-arrow"
         [class.disabled]="currentPage === 1"
-        (click)="prevPage()"
-      >
+        (click)="prevPage()">
         <img src="assets/images/arrows/Previous.png" alt="Назад">
       </div>
-
       <div class="pagination-pages">
         <a
           *ngFor="let page of pages"
           class="pagination-page"
           [class.active]="page === currentPage"
-          (click)="goToPage(page)"
-        >
+          (click)="goToPage(page)">
           {{ page }}
         </a>
       </div>
-
       <div
         class="pagination-arrow"
         [class.disabled]="currentPage === totalPages"
-        (click)="nextPage()"
-      >
+        (click)="nextPage()">
         <img src="assets/images/arrows/Next.png" alt="Вперёд">
       </div>
     </div>
-
-
   </div>
 </section>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, tap } from "rxjs";
 import { DefaultResponseType } from "../../../types/default-response.type";
 import { LoginResponseType } from "../../../types/login-response.type";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import { environment } from "../../../environments/environment";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import {UserType} from "../../../types/user.type";
@@ -31,12 +31,10 @@ export class AuthService {
     }).pipe(
       tap((res: DefaultResponseType | LoginResponseType) => {
 
-        // если error есть — это DefaultResponseType
         if ('error' in res && res.error) {
           return;
         }
 
-        // если есть accessToken — это LoginResponseType
         if ('accessToken' in res) {
           this.setToken(res.accessToken, res.refreshToken);
           this.userId = res.userId;
@@ -65,8 +63,6 @@ export class AuthService {
           this.snackBar.open('Вы успешно зарегистрировались');
         }
       })
-
-
     );
   }
 
@@ -92,7 +88,6 @@ export class AuthService {
   logout(): void {
     const { accessToken, refreshToken } = this.getTokens();
 
-    // если токенов нет — просто локально завершаем выход
     if (!refreshToken) {
       this.finishLogout();
       this.snackBar.open('Вы успешно вышли из системы');
@@ -106,7 +101,6 @@ export class AuthService {
       },
       error: (err) => {
         console.error('Ошибка при logout:', err);
-        // даже если сервер вернул ошибку — сессия локально сбрасывается
         this.finishLogout();
         this.snackBar.open('Ошибка выхода, но сессия сброшена');
       }
@@ -122,7 +116,7 @@ export class AuthService {
     this.isLogged$.next(false);
     this.userName$.next(null);
   }
-  // === Методы работы с токенами ===
+
   public getTokens(): { accessToken: string | null, refreshToken: string | null } {
     return {
       accessToken: localStorage.getItem(this.accessTokenKey),
@@ -139,10 +133,6 @@ export class AuthService {
 
   public getIsLoggedIn() {
     return this.isLogged;
-  }
-
-  get userId(): string | null {
-    return localStorage.getItem(this.userIdKey);
   }
 
   set userId(id: string | null) {

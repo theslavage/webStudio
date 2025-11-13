@@ -20,7 +20,6 @@ export class AppComponent {
       .subscribe((event: any) => {
         const url = event.urlAfterRedirects || event.url;
 
-        // если это главная страница — плавный режим
         if (url === '/' || url.startsWith('/#')) {
           document.documentElement.style.scrollBehavior = 'smooth';
           document.body.style.scrollBehavior = 'smooth';
@@ -30,12 +29,11 @@ export class AppComponent {
         }
       });
 
-    // слушаем клики по якорям, чтобы прокрутка шла плавно
     this.router.events.subscribe((event: any) => {
       if (event?.anchor) {
         setTimeout(() => {
           this.viewportScroller.scrollToAnchor(event.anchor);
-        }, 100); // даём отрендериться странице
+        }, 100);
       }
     });
   }

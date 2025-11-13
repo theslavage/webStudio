@@ -30,14 +30,12 @@ export class SignupComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // Проверка: все поля заполнены и чекбокс отмечен
   isFormFilled(): boolean {
     const form = this.signupForm.value;
     return !!(form.name && form.email && form.password && form.agree);
   }
 
   signup(): void {
-    // --- Валидация перед отправкой ---
     const controls = this.signupForm.controls;
 
     if (!controls.name.value) {
@@ -60,7 +58,6 @@ export class SignupComponent implements OnInit {
       return;
     }
 
-    // --- Если форма валидна — отправляем запрос ---
     this.authService.signup(
       controls.name.value,
       controls.email.value,

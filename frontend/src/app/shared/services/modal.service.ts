@@ -9,7 +9,6 @@ export type ModalContext = {
   };
 };
 
-
 @Injectable({ providedIn: 'root' })
 export class ModalService {
   private _isOpen$ = new BehaviorSubject<boolean>(false);
@@ -21,12 +20,12 @@ export class ModalService {
   open(ctx: ModalContext) {
     this._context$.next(ctx);
     this._isOpen$.next(true);
-    document.body.style.overflow = 'hidden'; // блокируем скролл под модалкой
+    document.body.style.overflow = 'hidden';
   }
 
   close() {
     this._isOpen$.next(false);
     this._context$.next(null);
-    document.body.style.overflow = ''; // возвращаем скролл
+    document.body.style.overflow = '';
   }
 }

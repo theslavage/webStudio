@@ -1,12 +1,9 @@
 @import "../../../../assets/styles/variables";
 @import "../../../../assets/styles/mixins";
 
-
 .detail {
-
   padding-top: 80px;
   padding-bottom: 120px;
-
 
   .container {
 
@@ -24,7 +21,6 @@
       span {
         color: #709FDC;
       }
-
     }
 
     .detail__body {
@@ -47,8 +43,6 @@
           .detail__dody-description {
             width: 607px;
             color: $text-color-blue;
-
-            /* Paragraph 1 - 20 */
             font-family: 'Montserrat', sans-serif;
             font-size: 20px;
             font-style: normal;
@@ -61,12 +55,10 @@
           width: 527px;
           height: 320px;
           overflow: hidden;
-
           object-fit: cover;
 
           img {
             width: 527px;
-
           }
         }
       }
@@ -87,12 +79,13 @@
             font-size: 20px;
             font-style: normal;
             font-weight: 500;
-            line-height: 130%; /* 26px */
+            line-height: 130%;
           }
+
           .detail__body-content-block-description {
             max-width: 818px;
-
           }
+
           .detail__body-social {
             display: flex;
             align-items: center;
@@ -107,6 +100,7 @@
               font-weight: 500;
               padding-right: 20px;
             }
+
             .detail__body-social-icons {
               display: flex;
               gap: 13px;
@@ -132,7 +126,6 @@
               font-style: normal;
               font-weight: 400;
 
-
               a {
                 color: $text-color-blue;
                 text-decoration: none;
@@ -142,23 +135,21 @@
             textarea.input {
               width: 818px;
               height: 248px;
-              resize: none; /* запрет изменения размера */
-              overflow-y: auto; /* вертикальная прокрутка при переполнении */
-              overflow-x: hidden; /* без горизонтального скролла */
-              word-wrap: break-word; /* перенос длинных слов */
-              white-space: pre-wrap; /* перенос строк */
-              padding: 20px 64px 20px 20px; /* отступы текста внутри */
+              resize: none;
+              overflow-y: auto;
+              overflow-x: hidden;
+              word-wrap: break-word;
+              white-space: pre-wrap;
+              padding: 20px 64px 20px 20px;
               border: 2px solid #B9D5FD;
               border-radius: 8px;
               box-sizing: border-box;
-
               font-family: 'Montserrat', sans-serif;
               font-size: 14px;
               font-style: normal;
               font-weight: 400;
               line-height: 130%; /* 18.2px */
               color: #071739;
-
               outline: none;
               transition: border-color 0.2s ease;
               margin-top: 40px;
@@ -169,16 +160,13 @@
                 font-size: 14px;
                 font-style: normal;
                 font-weight: 400;
-                line-height: 130%; /* 18.2px */
+                line-height: 130%;
               }
 
               &:focus {
-                border-color: #709FDC; /* подсветка при фокусе */
+                border-color: #709FDC;
               }
             }
-
-
-
 
             button {
               width: 422px;
@@ -205,7 +193,7 @@
                     background-color: #B9D5FD;
                     border: 2px solid #709FDC;
                     border-radius: 50%;
-                    overflow: hidden; /* 🔥 чтобы SVG не выходила за границы круга */
+                    overflow: hidden;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -214,11 +202,9 @@
                     svg {
                       width: 100%;
                       height: 100%;
-                      object-fit: cover; /* заставит SVG занять весь круг */
+                      object-fit: cover;
                     }
                   }
-
-
 
                   .detail__body-comment-user-info {
 
@@ -272,7 +258,7 @@
                     }
 
                     p {
-                      color: #071739; // по умолчанию (тёмный)
+                      color: #071739;
                       font-family: 'Montserrat', sans-serif;
                       font-size: 14px;
                       font-weight: 600;
@@ -281,26 +267,25 @@
                     }
 
                     &:active {
-                      transform: scale(0.95); // легкий клик эффект
+                      transform: scale(0.95);
                     }
 
                     &.active {
                       p {
-                        color: #709FDC; // ✅ наш голос подсвечивается
+                        color: #709FDC;
                       }
 
                       svg path {
-                        stroke: #709FDC; // ✅ подсветка иконки
-
+                        stroke: #709FDC;
                       }
                     }
                   }
+
                   &.disabled {
                     pointer-events: none;
                     cursor: default;
                   }
                 }
-
               }
 
               .detail__body-comment-more {
@@ -335,8 +320,8 @@
               font-weight: 400;
               padding-bottom: 20px;
             }
-            .article-cart-items {
 
+            .article-cart-items {
               display: flex;
               flex-direction: column;
               gap: 60px;
@@ -344,7 +329,6 @@
           }
         }
       }
-
     }
   }
 }
@@ -369,6 +353,7 @@
 
 
 :host ::ng-deep .detail__body-content-block-description {
+
   h1 {
     color: #709FDC;
     font-family: 'Montserrat', sans-serif;
@@ -398,10 +383,9 @@
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 130%; /* 18.2px */
+    line-height: 130%;
     padding-bottom: 14px;
     margin: 0;
-
   }
 
   i {
@@ -410,21 +394,21 @@
   }
 
   ul {
-    list-style: none; /* убираем точки */
-    counter-reset: list-counter; /* сбрасываем счётчик */
+    list-style: none;
+    counter-reset: list-counter;
     padding-left: 20px;
     margin: 0;
   }
 
    ul li {
-     counter-increment: list-counter; /* увеличиваем счётчик */
+     counter-increment: list-counter;
      position: relative;
      padding-left: 15px;
      color: #071739;
      font-size: 14px;
      font-style: normal;
      font-weight: 400;
-     line-height: 130%; /* 18.2px */
+     line-height: 130%;
 
      &::before {
        content: counter(list-counter) ". ";
@@ -438,16 +422,12 @@
      }
    }
 
-  /* ✅ Новое правило для жирного текста */
   p > b:first-child {
-
     color: $text-color-dark-blue;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 130%;
-
   }
-
 }

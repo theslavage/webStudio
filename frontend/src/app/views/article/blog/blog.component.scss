@@ -25,7 +25,6 @@
           border-radius: 5px;
           border: 2px solid $text-color-blue;
           background: #FFF;
-
           color: $text-color-blue;
           font-family: ' Montserrat', sans-serif;
           font-size: 16px;
@@ -114,7 +113,6 @@
           }
         }
 
-        /* --- состояние open --- */
         &.open {
           width: 257px;
           transition: width 0.35s ease;
@@ -127,7 +125,7 @@
 
           .blog-sorting-body {
             display: block;
-            max-height: 500px; /* 👈 ограничитель, чтобы плавно раскрылось */
+            max-height: 500px;
             opacity: 1;
             padding: 17px 23px;
           }
@@ -137,7 +135,6 @@
           }
         }
       }
-
     }
 
     .blog-carts {
@@ -147,7 +144,6 @@
     }
 
     .pagination {
-
       padding-top: 60px;
       display: flex;
       align-items: center;
@@ -158,6 +154,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         img {
           width: 10px;
           height: 18px;

@@ -18,7 +18,7 @@ export class BlogComponent implements OnInit {
   totalPages = 1;
 
   articles: ArticleType[] = [];
-  allArticles: ArticleType[] = []; // 👈 храним все статьи для фильтрации без нового запроса
+  allArticles: ArticleType[] = [];
 
   constructor(private articleService: ArticleService,
               private eRef: ElementRef) {}
@@ -27,7 +27,6 @@ export class BlogComponent implements OnInit {
     this.loadArticles();
   }
 
-  /** Загрузка данных с сервера */
   loadArticles(): void {
     this.articleService.getCategories(this.currentPage, this.activeFilters)
       .subscribe({
@@ -40,7 +39,6 @@ export class BlogComponent implements OnInit {
       });
   }
 
-  /** Перелистывание страниц */
   goToPage(page: number): void {
     if (page === this.currentPage) return;
     this.currentPage = page;
@@ -61,7 +59,6 @@ export class BlogComponent implements OnInit {
     }
   }
 
-  /** Открыть/закрыть фильтр */
   toggleFilter(): void {
     this.isFilterOpen = !this.isFilterOpen;
   }
@@ -75,40 +72,22 @@ export class BlogComponent implements OnInit {
       this.activeFilters.splice(index, 1);
     }
 
-    this.currentPage = 1; // при смене фильтра возвращаемся на первую страницу
-    this.loadArticles();  // 👈 загружаем с сервера
+    this.currentPage = 1;
+    this.loadArticles();
   }
 
-
-  /** Проверить активность фильтра */
   isActive(filter: string): boolean {
     return this.activeFilters.includes(filter);
   }
 
-
-  applyFilters(): void {
-    if (this.activeFilters.length === 0) {
-      this.articles = this.allArticles;
-      return;
-    }
-
-    this.articles = this.allArticles.filter(article =>
-      this.activeFilters.includes(article.category)
-    );
-  }
-
-  /** Удалить фильтр по крестику */
   removeFilter(filter: string): void {
     this.activeFilters = this.activeFilters.filter(f => f !== filter);
     this.currentPage = 1;
-    this.loadArticles(); // 👈 снова запрос к серверу
+    this.loadArticles();
   }
 
-
-  /** 💡 Клик вне блока фильтра */
   @HostListener('document:click', ['$event'])
   onClickOutside(event: Event): void {
-    // если фильтр открыт и клик был не внутри него
     if (
       this.isFilterOpen &&
       !this.eRef.nativeElement.querySelector('.blog-sorting')?.contains(event.target)
@@ -116,5 +95,4 @@ export class BlogComponent implements OnInit {
       this.isFilterOpen = false;
     }
   }
-
 }

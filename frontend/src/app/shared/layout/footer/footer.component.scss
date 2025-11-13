@@ -1,6 +1,5 @@
 @import "../../../../assets/styles/variables";
 
-
 .footer {
   padding-top: 40px;
   padding-bottom: 54px;
@@ -73,7 +72,6 @@
           }
         }
 
-
         .footer-down-actions {
           margin-top: 5px;
           display: flex;
@@ -98,8 +96,8 @@
 
 
 a.active-link {
-  color: #709fdc !important; // синий (можешь подставить свой $text-color-blue)
+  color: #709fdc !important;
   font-weight: 600;
-  text-decoration: underline; // или border-bottom, если хочешь подчёркивание
+  text-decoration: underline;
 }
 

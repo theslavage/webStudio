@@ -10,7 +10,6 @@
   padding: 0;
   position: relative;
 
-
   .article-cart-tag {
     position: absolute;
     top: 12px;
@@ -52,13 +51,11 @@
     max-width: 571px;
     height: 80px;
     text-overflow: ellipsis;
-
   }
 
   .article-cart-link {
+    margin-top: auto;
 
-
-    margin-top: auto; /* прижимает к низу карточки */
     a {
       color: $text-color-blue;
       font-family: 'Montserrat', sans-serif;

@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
 
   login(): void {
     if (this.loginForm.invalid) {
-      // подсвечиваем ошибки и выводим сообщения
       this.showValidationErrors();
       return;
     }
@@ -88,7 +87,6 @@ export class LoginComponent implements OnInit {
       this._snackBar.open('Пароль: минимум 6 символов, заглавные и строчные буквы');
     }
 
-    // подсветим все поля
     Object.values(this.loginForm.controls).forEach(control => {
       control.markAsTouched();
       control.updateValueAndValidity();

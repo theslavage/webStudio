@@ -8,8 +8,6 @@ import { ShortenDescriptionPipe } from './pipes/shorten-description.pipe';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import { LoaderComponent } from './components/loader/loader.component';
 
-
-
 @NgModule({
   declarations: [ArticleCartComponent, ModalComponent, ShortenDescriptionPipe, LoaderComponent],
   imports: [

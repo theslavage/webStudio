@@ -22,8 +22,6 @@ export class ModalComponent implements OnInit {
 
   modalType: 'product' | 'slider' | 'callback' = 'product';
 
-
-  // список услуг
   services: string[] = [
     'Создание сайтов',
     'Продвижение',
@@ -55,31 +53,23 @@ export class ModalComponent implements OnInit {
       phone: ['', [Validators.required, Validators.pattern(/^(\+?\d{10,15})$/)]]
     });
 
-    // автозаполнение "service" если модалка открыта с определённым serviceName
     this.contextSub = this.context$.subscribe((ctx: ModalContext | null) => {
       if (ctx?.payload?.serviceName) {
         this.form.patchValue({ service: ctx.payload.serviceName });
       }
     });
 
-    // отслеживаем тип модалки
     this.modalService.context$.subscribe(ctx => {
       if (ctx) {
         this.modalType = ctx.source;
 
-        // -----------------------------------
-        // 🔥 ЛОГИКА ДЛЯ CALLBACK
-        // -----------------------------------
         if (this.modalType === 'callback') {
-          // убираем проверку обязательности
           this.form.get('service')?.clearValidators();
           this.form.get('service')?.updateValueAndValidity();
 
-          // очищаем значение service
           this.form.patchValue({ service: '' });
         }
         else {
-          // если НЕ callback — возвращаем обязательность
           this.form.get('service')?.setValidators([Validators.required]);
           this.form.get('service')?.updateValueAndValidity();
         }
@@ -87,18 +77,14 @@ export class ModalComponent implements OnInit {
     });
   }
 
-
   onSubmit() {
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
     }
 
-
-
     this.loading = true;
     this.isError = false;
-
 
     const data: OrderRequest = {
       name: this.form.value.name,
@@ -123,7 +109,6 @@ export class ModalComponent implements OnInit {
         this.isError = true;
       }
     });
-
   }
 
   closeModal() {
@@ -132,11 +117,6 @@ export class ModalComponent implements OnInit {
     this.loading = false;
     this.form.reset();
     this.modalService.close();
-
-  }
-
-  ngOnDestroy(): void {
-    this.contextSub?.unsubscribe();
   }
 
   dropdownOpen = false;
@@ -162,17 +142,4 @@ export class ModalComponent implements OnInit {
     else if (e.key === 'Enter') { e.preventDefault(); this.selectService(this.services[this.focusedIndex]); }
     else if (e.key === 'Escape') { e.preventDefault(); this.dropdownOpen = false; }
   }
-
-  submitCallback(event: Event) {
-    event.preventDefault();
-
-    console.log("Заявка на звонок:", this.callbackData);
-
-    // Здесь можно отправить на сервер или в Telegram bot
-
-    this.modalService.close();
-  }
-
-
-
 }

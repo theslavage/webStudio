@@ -36,8 +36,6 @@ export class MainComponent implements OnInit {
     nav: false
   }
 
-
-
   reviews = [
     {
       name: 'Станислав',
@@ -68,10 +66,6 @@ export class MainComponent implements OnInit {
 
   isModalOpen = false;
 
-  openModal() {
-    this.isModalOpen = true;
-  }
-
   closeModal() {
     this.isModalOpen = false;
   }
@@ -82,6 +76,4 @@ export class MainComponent implements OnInit {
       payload: { serviceName }
     });
   }
-
-
 }

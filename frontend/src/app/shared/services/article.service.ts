@@ -22,7 +22,6 @@ export class ArticleService {
   getCategories(page: number = 1, categories: string[] = []): Observable<ArticlesResponseType> {
     let params = new HttpParams().set('page', page);
 
-    // 👇 Преобразуем кириллицу в slug-форму, понятную backend
     categories.forEach(category => {
       const slug = this.convertCategoryToSlug(category);
       params = params.append('categories[]', slug);
@@ -48,7 +47,6 @@ export class ArticleService {
     );
   }
 
-  /** 👇 Простая функция перевода русских категорий в латиницу */
   private convertCategoryToSlug(category: string): string {
     const map: Record<string, string> = {
       'Фриланс': 'frilans',

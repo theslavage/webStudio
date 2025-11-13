@@ -12,14 +12,11 @@
         </div>
         <div class="detail__body-main-image">
           <img [src]="serverStaticPath + article.image" [alt]="article.title">
-
         </div>
       </div>
-
       <div class="detail__body-content">
         <div class="detail__body-content-block">
           <div class="detail__body-content-block-description" [innerHTML]="article.text"></div>
-
           <div class="detail__body-social">
             <div class="detail__body-social-title">Понравилась статья? Поделитесь ею в своих социальных сетях!</div>
             <div class="detail__body-social-icons">
@@ -36,7 +33,6 @@
                     </clipPath>
                   </defs>
                 </svg>
-
               </a>
               <a href="http://facebook.com">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +47,6 @@
                     </clipPath>
                   </defs>
                 </svg>
-
               </a>
               <a href="https://instagram.com">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +61,6 @@
                     </clipPath>
                   </defs>
                 </svg>
-
               </a>
             </div>
           </div>
@@ -74,14 +68,10 @@
           <div class="detail__body-comment" *ngIf="article">
 
             <div class="detail__body-comment-title"
-                 [class.with-padding]="isLoggedIn"
-            >Комментарии к статье</div>
+                 [class.with-padding]="isLoggedIn">Комментарии к статье</div>
 
-
-            <!-- ✅ Если пользователь не авторизован — всё равно показываем комментарии -->
             <ng-container>
 
-              <!-- 🔒 Форма отправки комментариев — только для авторизованных -->
               <div *ngIf="isLoggedIn; else loginInfo">
                 <form [formGroup]="commentForm" (ngSubmit)="addComment()">
       <textarea
@@ -89,20 +79,17 @@
         rows="5"
         class="input"
         formControlName="comment"
-        placeholder="Напишите Ваш комментарий к статье..."
-      ></textarea>
+        placeholder="Напишите Ваш комментарий к статье..."></textarea>
                   <button class="button" type="submit">Опубликовать комментарий</button>
                 </form>
               </div>
 
-              <!-- 🔹 Сообщение для неавторизованных -->
               <ng-template #loginInfo>
                 <div class="detail__body-comment-auth">
                   Чтобы оставлять комментарии, <a routerLink="/login">войдите</a> или <a routerLink="/signup">зарегистрируйтесь</a>.
                 </div>
               </ng-template>
 
-              <!-- 🧩 Список комментариев — виден всем -->
               <div class="detail__body-comment-blocks" *ngIf="comments.length; else noComments">
                 <div class="detail__body-comment-block" *ngFor="let comment of comments">
                   <div class="detail__body-comment-user">
@@ -128,7 +115,6 @@
 
                   <div class="detail__body-comment-text">{{ comment.text }}</div>
 
-                  <!-- 💬 Лайки и дизлайки — только если пользователь залогинен -->
                   <div class="detail__body-comment-action"  [class.disabled]="!isLoggedIn">
                     <div class="like"
                          [class.active]="commentActions[comment.id] === 'like'"
@@ -138,7 +124,6 @@
                         <path d="M7.47998 18.35L10.58 20.75C10.98 21.15 11.88 21.35 12.48 21.35H16.28C17.48 21.35 18.78 20.45 19.08 19.25L21.48 11.95C21.98 10.55 21.08 9.34997 19.58 9.34997H15.58C14.98 9.34997 14.48 8.84997 14.58 8.14997L15.08 4.94997C15.28 4.04997 14.68 3.04997 13.78 2.74997C12.98 2.44997 11.98 2.84997 11.58 3.44997L7.47998 9.54997" stroke="#071739" stroke-width="1.5" stroke-miterlimit="10"/>
                         <path d="M2.37988 18.35V8.55002C2.37988 7.15002 2.97988 6.65002 4.37988 6.65002H5.37988C6.77988 6.65002 7.37988 7.15002 7.37988 8.55002V18.35C7.37988 19.75 6.77988 20.25 5.37988 20.25H4.37988C2.97988 20.25 2.37988 19.75 2.37988 18.35Z" stroke="#071739" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                       </svg>
-
                     </div>
 
                     <div class="dislike"
@@ -172,7 +157,6 @@
                   </div>
                 </div>
 
-                <!-- Загрузка комментариев -->
                 <div class="detail__body-comment-more" *ngIf="canLoadMore && !isLoadingMore"
                      (click)="loadMoreComments()">
                   <p>Загрузить ещё комментарии</p>
@@ -181,18 +165,11 @@
                 <div *ngIf="isLoadingMore" class="loader">Загрузка...</div>
               </div>
 
-              <!-- 🟡 Нет комментариев -->
               <ng-template #noComments>
                 <div class="detail__body-comment-no">Комментариев пока нет</div>
               </ng-template>
             </ng-container>
-
-
-            <div class="detail__body-comment-no" *ngIf="!comments.length">
-              Комментариев пока нет
-            </div>
           </div>
-
         </div>
 
         <div class="detail__body-content-info-bar" *ngIf="relatedArticle.length">
@@ -207,11 +184,8 @@
               </article-cart>
             </div>
           </div>
-
         </div>
       </div>
-
-
     </div>
   </div>
 </section>

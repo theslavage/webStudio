@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   isLogged = false;
   userName: string | null = null;
-  showMenu = false; // флаг для выпадающего меню
+  showMenu = false;
 
   constructor(private auth: AuthService) {}
 
@@ -33,10 +33,8 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-
   logout() {
     this.auth.logout();
     this.showMenu = false;
   }
-
 }

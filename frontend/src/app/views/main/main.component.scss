@@ -1,9 +1,7 @@
 @import "../../../assets/styles/variables";
 @import "../../../assets/styles/mixins";
 
-
 .products {
-
   padding-top: 120px;
   padding-bottom: 120px;
 
@@ -28,9 +26,7 @@
         box-sizing: border-box;
         padding: 0;
 
-
         .product-block-image {
-
           width: 291px;
           height: 291px;
           border-radius: 5px;
@@ -59,8 +55,8 @@
           line-height: 130%;
           padding-bottom: 15px;
           width: 100%;
-          max-width: 571px; /* твоя нужная ширина */
-          height: 80px; /* фиксируем высоту */
+          max-width: 571px;
+          height: 80px;
           text-overflow: ellipsis;
         }
 
@@ -75,11 +71,10 @@
             font-size: 20px;
             font-style: normal;
             font-weight: 600;
-            line-height: 130%; /* 26px */
+            line-height: 130%;
           }
 
           button {
-
             width: 163px;
           }
         }
@@ -156,12 +151,12 @@
               width: 40px;
               height: 40px;
               border-radius: 50%;
-              background: #B9D5FD; // синий кружок
+              background: #B9D5FD;
               flex-shrink: 0;
 
               span {
                 position: absolute;
-                top: -20px; /* немного выходит сверху */
+                top: -20px;
                 left: 50%;
                 transform: translateX(-50%);
                 color: $text-color-blue;
@@ -225,7 +220,6 @@
           font-style: normal;
           font-weight: 500;
           margin: 0;
-
         }
       }
     }
@@ -308,12 +302,10 @@
 
 
 .map {
-
   padding-bottom: 120px;
+
   .container {
-
     display: flex;
-
 
     .map-action iframe {
       vertical-align: bottom;
@@ -358,7 +350,6 @@
             display: flex;
             gap: 20px;
           }
-
         }
       }
     }

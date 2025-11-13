@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ArticleService } from '../../../shared/services/article.service';
 import { ArticleDetailResponseType } from '../../../../types/article-detail-response.type';
 import { environment } from '../../../../environments/environment';
@@ -24,7 +24,7 @@ export class DetailComponent implements OnInit, OnDestroy {
   comments: CommentType[] = [];
   isLoading = true;
   isLoadingMore = false;
-  isLoggedIn = false; // 👈 сюда будет попадать актуальное значение
+  isLoggedIn = false;
   serverStaticPath = environment.serverStaticPath;
 
   commentActions: Record<string, 'like' | 'dislike' | null> = {};
@@ -32,13 +32,12 @@ export class DetailComponent implements OnInit, OnDestroy {
     comment: new FormControl('', [Validators.required, Validators.minLength(2)])
   });
 
-
   private offset = 0;
   private readonly limit = 3;
   private routeSub!: Subscription;
   private authSub!: Subscription;
-  private readonly initialLimit = 3; // первые 3
-  private readonly loadMoreLimit = 10; // при подгрузке ещё 10
+  private readonly initialLimit = 3;
+  private readonly loadMoreLimit = 10;
   private totalComments = 0;
 
   constructor(
@@ -51,15 +50,12 @@ export class DetailComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    // ✅ Подписываемся на изменения авторизации
     this.authSub = this.authService.isLogged$.subscribe((status) => {
       this.isLoggedIn = status;
     });
 
-    // ✅ Также устанавливаем начальное состояние (если страница открылась уже залогиненым)
     this.isLoggedIn = this.authService.getIsLoggedIn();
 
-    // ✅ Следим за изменением URL (подгружаем статью)
     this.routeSub = this.route.paramMap.subscribe((params: ParamMap) => {
       const url = params.get('url');
       if (url) {
@@ -82,7 +78,6 @@ export class DetailComponent implements OnInit, OnDestroy {
         this.loadRelated(data.url);
         this.loadComments(data.id);
 
-        // ✅ Если пользователь залогинен — грузим его лайки/дизлайки
         if (this.isLoggedIn) {
           this.loadUserActions(data.id);
         }
@@ -94,7 +89,6 @@ export class DetailComponent implements OnInit, OnDestroy {
       }
     });
   }
-
 
   private loadRelated(url: string): void {
     this.articleService.getRelatedArticles(url).subscribe({
@@ -113,10 +107,8 @@ export class DetailComponent implements OnInit, OnDestroy {
           this.comments = [];
         }
 
-        // 🔧 Обрезаем вручную, если сервер отдаёт всё сразу
         const limit = this.offset === 0 ? this.initialLimit : this.loadMoreLimit;
         const newComments = res.comments.slice(this.offset, this.offset + limit);
-
         this.comments.push(...newComments);
         this.offset += newComments.length;
       },
@@ -131,7 +123,6 @@ export class DetailComponent implements OnInit, OnDestroy {
     if (!this.article) return;
 
     this.loader.show();
-
     this.isLoadingMore = true;
     this.articleService.getComments(this.article.id, this.offset, this.loadMoreLimit).subscribe({
       next: (res) => {
@@ -150,7 +141,6 @@ export class DetailComponent implements OnInit, OnDestroy {
 
   addComment(): void {
     if (!this.article) return;
-
     const text = this.commentForm.value.comment || '';
     if (!text.trim()) {
       this._snackBar.open('Введите текст комментария');
@@ -190,7 +180,6 @@ export class DetailComponent implements OnInit, OnDestroy {
     });
   }
 
-  /** Реакция на комментарий */
   onAction(commentId: string, action: 'like' | 'dislike' | 'violate'): void {
     this.commentService.applyAction(commentId, action).subscribe({
       next: (res) => {
@@ -204,13 +193,11 @@ export class DetailComponent implements OnInit, OnDestroy {
             const comment = this.comments.find(c => c.id === commentId);
             if (!comment) return;
 
-            // 🔄 Если повторно нажали тот же лайк/дизлайк — снимаем реакцию
             if (currentAction === action) {
               this.commentActions[commentId] = null;
               if (action === 'like' && comment.likesCount > 0) comment.likesCount--;
               if (action === 'dislike' && comment.dislikesCount > 0) comment.dislikesCount--;
             } else {
-              // ✅ Если была противоположная реакция — убираем её
               if (currentAction === 'like' && comment.likesCount > 0) comment.likesCount--;
               if (currentAction === 'dislike' && comment.dislikesCount > 0) comment.dislikesCount--;
 
@@ -230,7 +217,6 @@ export class DetailComponent implements OnInit, OnDestroy {
       }
     });
   }
-
 
   get canLoadMore(): boolean {
     return this.comments.length < this.totalComments;

@@ -5,7 +5,6 @@
   padding-bottom: 40px;
 
   .container {
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,7 +21,6 @@
           list-style: none;
           cursor: pointer;
 
-
           a {
             color: $text-color-dark-blue;
             font-family: "Montserrat", sans-serif;
@@ -30,7 +28,6 @@
             font-style: normal;
             font-weight: 500;
             text-decoration: none;
-
           }
         }
       }
@@ -53,7 +50,6 @@
       cursor: pointer;
       position: relative;
 
-
       .header-actions-icon {
         display: contents;
       }
@@ -66,6 +62,7 @@
         font-weight: 500;
         user-select: none;
       }
+
       .dropdown-menu {
         position: absolute;
         right: 0;
@@ -77,6 +74,7 @@
         min-width: 120px;
         z-index: 100;
       }
+
       .dropdown-item {
         padding: 12px 17px;
         text-align: center;
@@ -92,9 +90,10 @@
     }
   }
 }
+
 a.active-link {
-  color: #709fdc !important; // синий (можешь подставить свой $text-color-blue)
+  color: #709fdc !important;
   font-weight: 600;
-  text-decoration: underline; // или border-bottom, если хочешь подчёркивание
+  text-decoration: underline;
 }
 

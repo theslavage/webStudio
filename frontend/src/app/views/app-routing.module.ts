@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {AppComponent} from "./app.component";
 import {LayoutComponent} from "../shared/layout/layout.component";
 import {MainComponent} from "./main/main.component";
 import {PrivacyComponent} from "./privacy/privacy.component";

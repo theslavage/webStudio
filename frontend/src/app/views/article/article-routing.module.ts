@@ -5,7 +5,7 @@ import {DetailComponent} from "./detail/detail.component";
 
 const routes: Routes = [
   { path: 'blog', component: BlogComponent },
-  { path: 'blog/:url', component: DetailComponent } // 👈 добавили параметр :url
+  { path: 'blog/:url', component: DetailComponent }
 ];
 
 @NgModule({

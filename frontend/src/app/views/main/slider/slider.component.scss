@@ -27,7 +27,6 @@
   object-fit: cover;
 }
 
-/* Текст поверх изображения */
 .slide-overlay {
   position: absolute;
   top: 100px;
@@ -37,7 +36,6 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-
 }
 
 .slide-text {
@@ -102,7 +100,7 @@
 .nav-btn img {
   width: 30px;
   height: auto;
-  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6)); /* делает видимыми на светлом фоне */
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.6));
 }
 
 .prev {
@@ -113,7 +111,6 @@
   right: 25px;
 }
 
-/* Точки-индикаторы */
 .dots {
   position: absolute;
   bottom: 25px;
@@ -128,14 +125,14 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 1px solid #fff;      /* белый бордер */
-  background: transparent;     /* пустая середина */
+  border: 1px solid #fff;
+  background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .dots span.active {
-  background: #fff;            /* белый кружок */
+  background: #fff;
   transform: scale(1.0);
 }
 
