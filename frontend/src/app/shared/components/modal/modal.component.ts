@@ -15,11 +15,6 @@ export class ModalComponent implements OnInit {
   context$: Observable<ModalContext | null>;
   form!: FormGroup;
 
-  callbackData = {
-    name: '',
-    phone: ''
-  };
-
   modalType: 'product' | 'slider' | 'callback' = 'product';
 
   services: string[] = [
@@ -46,11 +41,12 @@ export class ModalComponent implements OnInit {
 
 
   ngOnInit() {
-    // форма
     this.form = this.fb.group({
       service: ['', Validators.required],
-      name: ['', [Validators.required, Validators.minLength(2)]],
-      phone: ['', [Validators.required, Validators.pattern(/^(\+?\d{10,15})$/)]]
+      name: ['', [Validators.required,
+        Validators.pattern(/^[A-Za-zА-Яа-яЁё\s]+$/)]],
+      phone: ['', [Validators.required,
+        Validators.pattern(/^(\+?\d{10,15})$/)]],
     });
 
     this.contextSub = this.context$.subscribe((ctx: ModalContext | null) => {
@@ -60,21 +56,22 @@ export class ModalComponent implements OnInit {
     });
 
     this.modalService.context$.subscribe(ctx => {
-      if (ctx) {
-        this.modalType = ctx.source;
+      if (!ctx) return;
 
-        if (this.modalType === 'callback') {
-          this.form.get('service')?.clearValidators();
-          this.form.get('service')?.updateValueAndValidity();
+      this.modalType = ctx.source;
 
-          this.form.patchValue({ service: '' });
-        }
-        else {
-          this.form.get('service')?.setValidators([Validators.required]);
-          this.form.get('service')?.updateValueAndValidity();
-        }
+      const serviceCtrl = this.form.get('service');
+
+      if (this.modalType === 'callback') {
+        serviceCtrl?.clearValidators();
+        this.form.patchValue({ service: '' });
+      } else {
+        serviceCtrl?.setValidators([Validators.required]);
       }
+
+      serviceCtrl?.updateValueAndValidity();
     });
+
   }
 
   onSubmit() {
@@ -130,16 +127,14 @@ export class ModalComponent implements OnInit {
     }
   }
 
-  selectService(s: string) {
-    this.form.patchValue({ service: s });
-    this.dropdownOpen = false;
-  }
+  selectService(serviceName: string) {
+    this.form.patchValue({ service: serviceName });
 
-  onKeydown(e: KeyboardEvent) {
-    if (!this.dropdownOpen) return;
-    if (e.key === 'ArrowDown') { e.preventDefault(); this.focusedIndex = (this.focusedIndex + 1) % this.services.length; }
-    else if (e.key === 'ArrowUp') { e.preventDefault(); this.focusedIndex = (this.focusedIndex - 1 + this.services.length) % this.services.length; }
-    else if (e.key === 'Enter') { e.preventDefault(); this.selectService(this.services[this.focusedIndex]); }
-    else if (e.key === 'Escape') { e.preventDefault(); this.dropdownOpen = false; }
+    const serviceControl = this.form.get('service');
+    serviceControl?.markAsTouched();
+    serviceControl?.markAsDirty();
+    serviceControl?.updateValueAndValidity();
+
+    this.dropdownOpen = false;
   }
 }

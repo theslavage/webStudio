@@ -18,7 +18,6 @@ export class BlogComponent implements OnInit {
   totalPages = 1;
 
   articles: ArticleType[] = [];
-  allArticles: ArticleType[] = [];
 
   constructor(private articleService: ArticleService,
               private eRef: ElementRef) {}

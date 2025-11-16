@@ -57,5 +57,4 @@ export class ArticleService {
     };
     return map[category] || category.toLowerCase();
   }
-
 }

@@ -17,34 +17,31 @@
           </h2>
 
           <form [formGroup]="form" (ngSubmit)="onSubmit()" class="modal-form">
+
             <div class="select-wrap"
                  *ngIf="modalType !== 'callback'"
                  [class.invalid]="form.get('service')?.invalid && form.get('service')?.touched">
+
               <button
                 type="button"
                 class="select-control"
-                (click)="toggleDropdown()"
-                (keydown)="onKeydown($event)"
-                [attr.aria-expanded]="dropdownOpen"
-                aria-haspopup="listbox">
+                (click)="toggleDropdown()">
                 <span>{{ form.value.service || 'Выберите услугу' }}</span>
-                <svg class="caret" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
-                  <path d="M5 7l5 6 5-6z"></path>
-                </svg>
               </button>
 
-              <div class="select-menu" *ngIf="dropdownOpen" role="listbox">
+              <div class="select-menu" *ngIf="dropdownOpen">
                 <div
-                  *ngFor="let s of services; let i = index"
-                  class="option"
-                  role="option"
-                  [attr.aria-selected]="form.value.service === s"
-                  [class.selected]="form.value.service === s"
-                  (mouseenter)="focusedIndex = i"
-                  (mousedown)="selectService(s)">
-                  {{ s }}
+                  *ngFor="let serviceName of services"
+                  (mousedown)="selectService(serviceName)">
+                  {{ serviceName }}
                 </div>
+
               </div>
+            </div>
+
+            <div class="error"
+                 *ngIf="modalType !== 'callback' && form.get('service')?.touched && form.get('service')?.invalid">
+              Выберите услугу
             </div>
 
             <input
@@ -53,11 +50,21 @@
               formControlName="name"
               [class.invalid]="form.get('name')?.invalid && form.get('name')?.touched" />
 
+            <div class="error" *ngIf="form.get('name')?.touched && form.get('name')?.invalid">
+              <span *ngIf="form.get('name')?.errors?.['required']">Имя обязательно</span>
+              <span *ngIf="form.get('name')?.errors?.['pattern']">Только буквы, без цифр</span>
+            </div>
+
             <input
               type="tel"
               placeholder="Ваш телефон"
               formControlName="phone"
               [class.invalid]="form.get('phone')?.invalid && form.get('phone')?.touched" />
+
+            <div class="error" *ngIf="form.get('phone')?.touched && form.get('phone')?.invalid">
+              <span *ngIf="form.get('phone')?.errors?.['required']">Телефон обязателен</span>
+              <span *ngIf="form.get('phone')?.errors?.['pattern']">Введите корректный номер телефона</span>
+            </div>
 
             <button
               type="submit"
@@ -76,4 +83,3 @@
     </div>
   </div>
 </ng-container>
-

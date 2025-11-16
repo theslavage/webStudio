@@ -12,6 +12,10 @@
             formControlName="email"
             [class.invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"/>
         </div>
+        <div class="error"
+             *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+          Введите корректный email
+        </div>
 
         <div class="auth-input">
           <input
@@ -20,6 +24,10 @@
             placeholder="Пароль"
             formControlName="password"
             [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"/>
+        </div>
+        <div class="error"
+             *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+          Пароль: минимум 6 символов, заглавные и строчные буквы
         </div>
 
         <div class="auth-checkbox">

@@ -167,7 +167,6 @@ export class DetailComponent implements OnInit, OnDestroy {
   }
 
 
-
   private loadUserActions(articleId: string): void {
     this.commentActions = {}; // сбрасываем старые данные
     this.commentService.getArticleCommentActions(articleId).subscribe({

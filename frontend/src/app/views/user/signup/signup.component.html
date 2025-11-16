@@ -12,6 +12,10 @@
                  formControlName="name"
                  [ngStyle]="{'border-color': signupForm.get('name')?.invalid && (signupForm.get('name')?.dirty || signupForm.get('name')?.touched) ? 'red' : ''}">
         </div>
+        <div class="error"
+             *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.invalid">
+          Введите ваше имя
+        </div>
 
         <div class="auth-input">
           <input type="text" class="input"
@@ -19,12 +23,20 @@
                  formControlName="email"
                  [ngStyle]="{'border-color': signupForm.get('email')?.invalid && (signupForm.get('email')?.dirty || signupForm.get('email')?.touched) ? 'red' : ''}">
         </div>
+        <div class="error"
+             *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid">
+          Введите корректный email
+        </div>
 
         <div class="auth-input">
           <input type="password" class="input"
                  placeholder="Пароль"
                  formControlName="password"
                  [ngStyle]="{'border-color': signupForm.get('password')?.invalid && (signupForm.get('password')?.dirty || signupForm.get('password')?.touched) ? 'red' : ''}">
+        </div>
+        <div class="error"
+             *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+          Пароль: минимум 6 символов, заглавные и строчные буквы
         </div>
 
         <div class="auth-checkbox">

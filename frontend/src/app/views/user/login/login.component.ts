@@ -4,7 +4,6 @@ import { Router } from "@angular/router";
 import { AuthService } from "../../../core/auth/auth.service";
 import { LoginResponseType } from "../../../../types/login-response.type";
 import { DefaultResponseType } from "../../../../types/default-response.type";
-import { HttpErrorResponse } from "@angular/common/http";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
@@ -33,15 +32,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login(): void {
-    if (this.loginForm.invalid) {
-      this.showValidationErrors();
-      return;
-    }
+    Object.values(this.loginForm.controls).forEach(control => {
+      control.markAsTouched();
+      control.updateValueAndValidity();
+    });
+
+    if (this.loginForm.invalid) return;
 
     const { email, password, rememberMe } = this.loginForm.value;
 
     this.authService.login(email!, password!, !!rememberMe).subscribe({
-      next: (data: LoginResponseType | DefaultResponseType) => {
+      next: (data) => {
         let error = null;
 
         if ((data as DefaultResponseType).error !== undefined) {
@@ -49,13 +50,16 @@ export class LoginComponent implements OnInit {
         }
 
         const loginResponse = data as LoginResponseType;
-        if (!loginResponse.accessToken || !loginResponse.refreshToken || !loginResponse.userId) {
+
+        if (!loginResponse.accessToken ||
+          !loginResponse.refreshToken ||
+          !loginResponse.userId) {
           error = 'Ошибка авторизации';
         }
 
         if (error) {
           this._snackBar.open(error);
-          throw new Error(error);
+          return;
         }
 
         this.authService.setToken(loginResponse.accessToken, loginResponse.refreshToken);
@@ -63,33 +67,9 @@ export class LoginComponent implements OnInit {
         this._snackBar.open('Вы успешно авторизовались');
         this.router.navigate(['/']);
       },
-      error: (errorResponse: HttpErrorResponse) => {
-        if (errorResponse.error && errorResponse.error.message) {
-          this._snackBar.open(errorResponse.error.message);
-        } else {
-          this._snackBar.open('Ошибка авторизации');
-        }
+      error: (err) => {
+        this._snackBar.open(err.error?.message || 'Ошибка авторизации');
       }
-    });
-  }
-
-  private showValidationErrors(): void {
-    const emailCtrl = this.loginForm.get('email');
-    const passwordCtrl = this.loginForm.get('password');
-
-    if (emailCtrl?.hasError('required')) {
-      this._snackBar.open('Введите адрес электронной почты');
-    } else if (emailCtrl?.hasError('email')) {
-      this._snackBar.open('Некорректный формат email',);
-    } else if (passwordCtrl?.hasError('required')) {
-      this._snackBar.open('Введите пароль');
-    } else if (passwordCtrl?.hasError('pattern')) {
-      this._snackBar.open('Пароль: минимум 6 символов, заглавные и строчные буквы');
-    }
-
-    Object.values(this.loginForm.controls).forEach(control => {
-      control.markAsTouched();
-      control.updateValueAndValidity();
     });
   }
 }

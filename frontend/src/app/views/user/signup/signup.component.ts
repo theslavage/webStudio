@@ -36,42 +36,35 @@ export class SignupComponent implements OnInit {
   }
 
   signup(): void {
-    const controls = this.signupForm.controls;
+    Object.values(this.signupForm.controls).forEach(control => {
+      control.markAsTouched();
+      control.updateValueAndValidity();
+    });
 
-    if (!controls.name.value) {
-      this._snackBar.open('Введите ваше имя');
-      return;
-    }
-
-    if (!controls.email.value || controls.email.invalid) {
-      this._snackBar.open('Введите корректный email');
-      return;
-    }
-
-    if (!controls.password.value || controls.password.invalid) {
-      this._snackBar.open('Пароль: минимум 6 символов, заглавные и строчные буквы');
-      return;
-    }
-
-    if (!controls.agree.value) {
+    if (!this.signupForm.get('agree')?.value) {
       this._snackBar.open('Необходимо согласие на обработку персональных данных');
       return;
     }
 
+    if (this.signupForm.invalid) {
+      return;
+    }
+
+    const controls = this.signupForm.controls;
+
     this.authService.signup(
-      controls.name.value,
-      controls.email.value,
-      controls.password.value
+      controls.name.value!,
+      controls.email.value!,
+      controls.password.value!
     ).subscribe({
       next: (data: LoginResponseType | DefaultResponseType) => {
-        let error = null;
+        let error: string | null = null;
 
         if ((data as DefaultResponseType).error !== undefined) {
           error = (data as DefaultResponseType).message;
         }
 
         const loginResponse = data as LoginResponseType;
-
         if (!loginResponse.accessToken ||
           !loginResponse.refreshToken ||
           !loginResponse.userId) {
@@ -80,14 +73,17 @@ export class SignupComponent implements OnInit {
 
         if (error) {
           this._snackBar.open(error);
-          throw new Error(error);
+          return;
         }
 
         this.authService.setToken(loginResponse.accessToken, loginResponse.refreshToken);
         this.authService.userId = loginResponse.userId;
+
         this._snackBar.open('Вы успешно зарегистрировались');
+
         this.router.navigate(['/']);
       },
+
       error: (errorResponse: HttpErrorResponse) => {
         if (errorResponse.error && errorResponse.error.message) {
           this._snackBar.open(errorResponse.error.message);

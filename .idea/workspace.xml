@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1e55dab-cb92-4260-9767-876cb6ce3471" name="Changes" comment="cleanedCode" />
+    <list default="true" id="a1e55dab-cb92-4260-9767-876cb6ce3471" name="Changes" comment="addedCustomSpinnerReb">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/layout/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/article.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/shared/services/comment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/shared/services/comment.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/article/article.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/article/article.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/article/blog/blog.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/article/blog/blog.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/views/user/signup/signup.component.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,6 +160,8 @@
       <workItem from="1763025324179" duration="6564000" />
       <workItem from="1763034409512" duration="5445000" />
       <workItem from="1763045261712" duration="2732000" />
+      <workItem from="1763106681981" duration="1248000" />
+      <workItem from="1763291293949" duration="6290000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -240,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763046335202</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="addedCustomSpinnerReb">
+      <option name="closed" value="true" />
+      <created>1763049708540</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1763049708540</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,9 +285,9 @@
     <MESSAGE value="realizedArticleFilter" />
     <MESSAGE value="addedDetailArticle" />
     <MESSAGE value="addedCustomSpinner" />
-    <MESSAGE value="addedCustomSpinnerReb" />
     <MESSAGE value="cleanedCode" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanedCode" />
+    <MESSAGE value="addedCustomSpinnerReb" />
+    <option name="LAST_COMMIT_MESSAGE" value="addedCustomSpinnerReb" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -274,11 +301,6 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/frontend/src/app/shared/components/modal/modal.component.html</url>
-          <line>13</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/app/core/auth/auth.service.ts</url>
           <line>75</line>
           <option name="timeStamp" value="8" />
@@ -287,6 +309,16 @@
           <url>file://$PROJECT_DIR$/frontend/src/app/views/article/detail/detail.component.ts</url>
           <line>151</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/app/shared/services/comment.service.ts</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/app/views/article/blog/blog.component.ts</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
